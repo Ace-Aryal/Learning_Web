@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<h1>Array</h1>
+</body>
+<script>
+  let marks = [55,65,56,46,86,56,76]
+let   sum=0;
+  for(let mark of marks) {
+    sum += mark
+  }
+ let average = sum/marks.length;
+ console.log (`The average marks of class is ${average.toFixed(2)}`);
+  
+  
+  let prices =[100,35,4643,42,67,86]
+newPrices =  prices.map(function(item) {
+    return item - item * 0.1
+  })
+  
+  console.log (newPrices);
+</script>
+</html>

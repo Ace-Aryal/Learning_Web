@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<h1>Hello Js</h1>
+</body>
+<script>
+let count =0;
+  function vowelLength (word){
+    for (let str of word){
+      if ( str =="a"||str =="e"||str =="i"||str =="o"||str =="u") {
+        count++
+      }
+    }
+    return count;
+  }
+console.log ( vowelLength("Dipesh"))
+let anotherCount =0;
+let count2 = (strs)=> {
+    for (let str of strs){
+      if ( str =="a"||str =="e"||str =="i"||str =="o"||str =="u") {
+        anotherCount++
+      }
+    }
+    return anotherCount;
+  }
+ console.log (count2("Hello World"))
+</script>
+</html>
