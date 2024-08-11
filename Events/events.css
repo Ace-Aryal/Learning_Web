@@ -1,0 +1,48 @@
+.classdark {
+  background-color: black;
+  color : white;
+  
+}
+.container{
+  position:absolute;
+  right: 10px;
+  display: flex;
+  width:400px;
+  justify-content: center;
+  
+}
+.classlight {
+  background-color: white;
+  color: black;
+  
+}
+.red{
+  background-color:red;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+
+
+.yellow{
+  background-color:yellow;
+  height: 100px;
+  width: 100px;
+  margin:10px;
+}
+  
+.blue{
+  background-color:blue;
+  height: 100px;
+  width: 100px;
+  margin:10px;
+}
+.classBlue {
+  background-color: blue
+}
+.classYellow {
+  background-color: yellow;
+}
+.classRed {
+  background-color:red;
+}

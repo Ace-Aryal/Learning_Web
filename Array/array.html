@@ -24,7 +24,47 @@ let   sum=0;
 newPrices =  prices.map(function(item) {
     return item - item * 0.1
   })
-  
   console.log (newPrices);
+  
+  let newStocks = [
+    {  
+      BookName : "Sapiens-A breif history of humabkind",
+      author:"Yuval Noah Harari",
+      genre:"History",
+      print:"2024"
+    },
+    {BookName : "Clash of Titans",
+      author:"George RR Martin",
+      genre:"Fiction",
+      print:"2020"
+      
+    },
+    {
+      BookName : "It ends with us",
+      author:"Coolen Hoover",
+      genre:"Fiction",
+      print:"2024"
+    },
+    {
+      BookName : "Atomic Habits",
+      author:"James Clear",
+      genre:"Self-Help",
+      print:"2023"
+    }
+    ]
+    let newBooks = newStocks.filter((book)=> book.print >= 2023)
+    console.log (newBooks)
+    
+    let Fiction = newStocks.filter((book)=>book.genre === "Fiction")
+    console.log (Fiction)
+  
+  let numbers = [100,500,600,500,409]
+  
+  let minimum = numbers.reduce((prev,curr)=>{
+    return prev<curr?prev:curr
+  })
+  console.log (minimum)
+  
+  
 </script>
 </html>
