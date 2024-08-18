@@ -1,0 +1,37 @@
+.buttonContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  
+  
+}
+body{
+  border: 2px solid teal;
+  
+}
+.btn {
+  height: 100px;
+  width: 100px;
+ margin: 10px;
+  
+}
+h2{
+  text-align: center;
+}
+#red{
+  background-color: red;
+}
+#orange {
+  background-color: orange;
+}
+#blue {
+  background-color: teal;
+}
+#green{
+  background-color: green;
+}
+#dark {
+background-color:black;
+}

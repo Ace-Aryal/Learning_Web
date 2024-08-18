@@ -22,6 +22,4 @@ class admin extends user{
   }
   
 }
-let bishnu = new admin('vishnu','vishnutheprotector@hindu.com') // creating bishnu object and passing args to child constructor
-
 console.log (bishnu)

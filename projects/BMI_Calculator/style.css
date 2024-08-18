@@ -1,0 +1,20 @@
+body {
+  background-color: aliceblue;
+}
+.container {
+  text-align: center;
+  border: 2px solid black;
+  padding-bottom: 40px;
+}
+#submit {
+  background-color: yellowgreen;
+  padding: 5px 10px;
+  border: 1px solid lightyellow;
+  border-radius: 15%;
+  font-size: 1.25rem;
+}
+.inputArea {
+  background-color: skyblue;
+  width: 40px;
+  height: 15px;
+}
