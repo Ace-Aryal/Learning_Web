@@ -1,0 +1,15 @@
+h1{
+  color:cyan;
+  text-align: center;
+}
+.btnContainer{
+  display: flex;
+  justify-content: space-evenly;
+  
+  
+}
+button{
+  font-size: 1.25em;
+  background-color: aliceblue;
+  border:1px solid skyblue;
+}

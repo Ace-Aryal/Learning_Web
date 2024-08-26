@@ -1,0 +1,27 @@
+#refresh , #display {
+  height: 60px;
+  width: 120px;
+background-color: coral;
+border-radius: 10%;
+padding-top:10px;
+font-size: 2rem;
+margin: 5px 0 5px 0;
+box-shadow: 1;
+}
+*{
+  text-align: center;
+}
+.clockContainer {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid black;
+  padding-top: 100px;
+  background-color: #36454F;
+  padding-bottom: 200px;
+}
+h2 {
+  color:cyan;
+}
