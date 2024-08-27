@@ -22,14 +22,17 @@ function randomColor () {
 // making starter global to use stoppee in global
 let starter;
 function startChangingColor (param) {
+  if (!starter){ // starts changing color only if starter is null or undefined
      starter = setInterval( randomColor , 1000
   )
+  }
 }
 
 
   // passing random color fn into set interval 
   function stopChangingColor(param) {
     const stopper = clearInterval(starter)
+    starter = null; // on stopping clears the memory to null
   }
 
   
