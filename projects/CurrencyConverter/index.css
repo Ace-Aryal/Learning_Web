@@ -1,0 +1,104 @@
+*{
+  margin: 0 0 0 0;
+  padding: 0;
+  
+}
+
+
+h2{
+  margin: 1rem 0 1.5rem 0;
+  font-size: 1.75rem;
+}
+
+p{
+  margin: 1rem 0 0 0.3rem;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: aliceblue;
+}
+
+.container {
+  background-color: #C0D6DF;
+  min-width: 40vh;
+  min-height: 45vh;
+  border-radius: 1.5vh;
+  padding: 1.5rem;
+  
+}
+form input,button,select {
+  min-width: 100%;
+  border: 0;
+  outline: none;
+  border-radius:0.2rem;
+  margin: 0.2rem;
+  
+}
+
+form div input{
+  border: 1px solid lightgrey;
+  font-size:1rem;
+  
+  height: 2.5rem;
+  
+}
+
+.dropdown {
+  position:relative;
+  margin: 2rem 0 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 2rem 0;
+}
+
+i {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  
+}
+.displayAndSubmit {
+  text-align: center;
+}
+
+button{
+  margin-top:2rem;
+  height: 3rem;
+  cursor: pointer;
+  background-color: #3D5A80;
+  font-size: 1.15rem;
+  color:snow;
+  border-radius: 0.5rem;
+  
+}
+
+img{
+  height:2rem;
+  width: 2rem;
+}
+.select-money{
+  padding:0 1.1rem 0 1.1rem;
+  display: flex;
+justify-content: center;
+  width:4rem;
+  border: 1px solid lightgray;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  margin-left: 0.25rem;
+}
+
+select{
+  background-color: white;
+}
+
+#display{
+  font-size: 1rem;
+}
+
