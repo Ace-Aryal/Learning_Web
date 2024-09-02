@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<script>
+  
+  
+  // sort () sort elements in lexicographical order not number 
+  // lexicographical = alphabet+ number + symbols to create an string
+  
+  let num = [1,2,3,4,5,6,7,9,8,10]
+  
+  num.sort((a,b)=>a-b) // modufies orig array
+  
+  console.log (num)
+  
+ 
+ 
+  let people =[
+    {name:"Dipesh", age:18 , GPA:3.5},
+    {name:"Krishu", age:16 ,GPA:3.7},
+    {name:"Ramesh", age:24, GPA:3.2}
+    
+    ]
+     //  people.sort((a,b)=> a.age - b.age)
+   // people.sort((a,b)=> a.name - b.name) not good
+   people.sort((a,b)=> a.name.localeCompare(b.name))// ascending in alphabet not in lexography
+    console.log (people)
+  
+  
+</script>
+</body>
+
+</html>

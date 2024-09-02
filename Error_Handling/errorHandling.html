@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<script>
+  let dividend = Number(prompt("Enter the dividend")) // typecasting
+  let divisor = Number(prompt("Enter the divisor"))
+
+try {
+
+  if(divisor ==0 ){
+    throw new Error("You can't divide by zero you idiot")
+  }
+  if (isNaN(divisor) || isNaN(dividend)) {
+    throw new Error("Input must be numbers ")
+  }
+  
+  let result = dividend/divisor;
+  console.log(result);
+  
+}
+
+catch(error){
+  console.error (error)
+}
+</script>
+</body>
+
+</html>
