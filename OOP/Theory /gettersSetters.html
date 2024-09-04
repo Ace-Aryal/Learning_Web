@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<script>
+  
+  class Rectangle {
+    constructor (height, width){
+      this.height = height;
+      this.width = width;
+      
+      
+    }
+    set height(newHeight){
+      if(newHeight < 0) {
+        console.error("Height must be a positive number")
+      }
+      else{
+        return this._height = newHeight;
+      }
+      
+      
+    }
+    set width(newWidth){
+       if (newWidth < 0 && isNaN(newWidth)) {
+   console.error("Width must be a positive number")
+     } // validation
+    else {
+   return this._width = newWidth; // writing 
+   }
+    }
+    
+    
+    get width(){
+      return this._width;
+    }
+    get height(){
+      return this._height; // making height and width readable
+    }
+    
+    get Area(){
+      return (this._height * this._width).toFixed(2)
+    } // creating new method eveb though we are not taking it in cinstructor function
+  }
+  
+ // const newRectangle = new Rectangle (-100000, "pizza") // We need to validate this
+  
+//  console.log (newRectangle.height,newRectangle.width)
+const newRectangle = new Rectangle (10, 20)
+console.log (newRectangle.Area)
+
+  class person {
+    constructor(firstName, lastName, age) {
+      this.firstName= firstName;
+      this.lastName = lastName;
+      this.age = age;
+    }
+    set firstName(newfirstName) {
+      if(typeof(newfirstName)==="string" && newfirstName.length>0){
+        return this._firstName = newfirstName;
+      }
+      else{
+        console.error("First Name must be a string with length greater than zero")
+      }
+    }
+        set lastName(newlastName) {
+      if(typeof(newlastName)==="string" && newlastName.length>0){
+        return this._lastName = newlastName;
+      }
+      else{
+        console.error("last Name must be a string with length greater than zero")
+      }
+    }
+    
+    set age (newAge){
+      if(typeof(newAge)==="number" && newAge >=0 ){
+        return this._age;
+      }
+      else{
+        console.error("Afe must be a positivenumber")
+      }
+    }
+    
+    get firstName(){
+      return this._firstName;
+    }
+    get lastName() {
+      return this._lastName;
+    }
+    get fullName() {
+      return `${this._firstName 
+      } ${this._lastName}`
+    }
+    get age(){
+      return this._age;
+    }
+    
+    
+  }
+  
+//const  person1 = new person(46,69,"pizza")
+const  person1 = new person("Dipesh","Aryal",18)
+  console.log (person1)
+  console.log(person1.fullName)
+</script>
+</body>
+
+</html>
