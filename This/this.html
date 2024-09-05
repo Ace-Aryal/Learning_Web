@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<script>
+  var length = 5; // inCase if let and const output zero
+  
+  function callback() {
+    console.log(this.length)
+  }
+  let newObj = {
+    length:4,
+    getLength(cb){ // this points to object
+      cb(); // this fn points to global as it is nested inside object methos
+    }
+    
+  }
+  
+  newObj.getLength(callback)
+</script>
+</body>
+
+</html>

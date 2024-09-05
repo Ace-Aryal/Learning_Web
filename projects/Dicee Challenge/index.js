@@ -9,7 +9,11 @@ const playerTwoDie = Math.ceil((Math.random()*6))
 
 announcer = document.querySelector ('h1')
 
-switch (playerOneDie) {
+
+
+
+
+document.addEventListener('load',(e)=>{switch (playerOneDie) {
   case 1:
  playerOne.setAttribute("src","images/dice1.png")
     break;
@@ -36,8 +40,9 @@ switch (playerOneDie) {
   
   default:
     // Tab to edit
-}
-switch (playerTwoDie) {
+}})
+
+document.addEventListener('load',(e)=>{switch (playerTwoDie) {
   case 1:
  playerTwo.setAttribute("src","images/dice1.png")
     break;
@@ -65,6 +70,8 @@ switch (playerTwoDie) {
   default:
     // Tab to edit
 }
+})
+
 if (playerOneDie == playerTwoDie){
   announcer.innerText = "Draw"
 }
