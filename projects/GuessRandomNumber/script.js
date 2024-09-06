@@ -1,6 +1,6 @@
 let randomNumber = Math.ceil(Math.random() *1000)
 
-
+console.log(randomNumber)
 const guessField = document.querySelector ("#guessField")
 
 const submit = document.querySelector ("#subt")
@@ -123,7 +123,7 @@ guessField.removeAttribute('disabled')
 playGame = true;
 
 startOver.removeChild(para)
-submit.removeAttributeNS(disabled)
+submit.removeAttributeNS('disabled')
   
 })
 }
