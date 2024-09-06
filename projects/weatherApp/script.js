@@ -22,7 +22,6 @@ getWeatherBtn.addEventListener('click',async (e)=>{
     try { // recieving data from fetch in json format
       const weatherData = await getWeatherData(city)
       
-      console.log(weatherData)
       
       displayWeatherInfo(weatherData)
       
@@ -59,9 +58,12 @@ async function getWeatherData(city) {
 
 function displayWeatherInfo(data) {
   // using destructuring
+  
+  if(data){
   const { name : city ,
           main : {temp, humidity} ,
           weather : [{description ,icon ,id } ] }= data ;
+          
           backgroundChanger(id);
           
           card.textContent = ""
@@ -84,7 +86,7 @@ function displayWeatherInfo(data) {
           
           cityDisplay.textContent= city;
           tempDisplay.textContent = `${((temp -273)*9/5 +32).toFixed(1) }⁰ F`
-          humidityDisplay.textContent = `Humidity:${humidity}`
+          humidityDisplay.textContent = `Humidity: ${humidity} %`
           descDisplay.textContent = `${description}`
          
           
@@ -104,7 +106,11 @@ function displayWeatherInfo(data) {
           
   }
 
+else {
+  card.textContent = "Sorry, couldn't get data for the city :("
+}
 
+}
 
 
 
