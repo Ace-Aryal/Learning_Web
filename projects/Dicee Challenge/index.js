@@ -2,8 +2,8 @@ const playerOne = document.querySelector ('.img1')
 
 const playerTwo = document.querySelector ('.img2')
 
-
 const playerOneDie = Math.ceil((Math.random()*6))
+
 
 const playerTwoDie = Math.ceil((Math.random()*6))
 
@@ -13,7 +13,7 @@ announcer = document.querySelector ('h1')
 
 
 
-document.addEventListener('load',(e)=>{switch (playerOneDie) {
+window.addEventListener('load',(e)=>{switch (playerOneDie) {
   case 1:
  playerOne.setAttribute("src","images/dice1.png")
     break;
@@ -42,7 +42,7 @@ document.addEventListener('load',(e)=>{switch (playerOneDie) {
     // Tab to edit
 }})
 
-document.addEventListener('load',(e)=>{switch (playerTwoDie) {
+window.addEventListener('load',(e)=>{switch (playerTwoDie) {
   case 1:
  playerTwo.setAttribute("src","images/dice1.png")
     break;
