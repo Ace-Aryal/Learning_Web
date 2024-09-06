@@ -107,7 +107,7 @@ function displayWeatherInfo(data) {
   }
 
 else {
-  card.textContent = "Sorry, couldn't get data for the city :("
+  card.textContent = "Sorry, couldn't get weather data for the city :("
 }
 
 }
