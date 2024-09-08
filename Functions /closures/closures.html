@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+
+
+
+<script>
+  
+  // closure = A function defined inside of another function,  the inner function has access to the variables and scope of the outer function.
+//Allow for private variables and state maintenance 
+// Used frequently in JS frameworks: React, Vue, Angular
+
+function createCounter (){
+  let count = 0; // closures maintain the state , counter isn't reset 
+  // we could have declared count as global and used
+  //just a regular function but that would make 
+  //variable vulnerable to change in large codespace
+  // so we are encapsulating it inside closures
+  function increment () { // its like creatung a method 
+    count++
+    console.log (`Count is increased to ${count}`)
+  }
+  
+  function getCount(){ // its like creatung a method 
+    return count;
+  }
+  return {increment,getCount}; // destructuring
+}
+  
+  const counter = createCounter();
+  
+  counter.increment()
+  counter.increment()
+  console.log (`The current count is${counter.getCount()}`)
+  
+  
+  //-------- example 3------//
+  
+  // creating a closure for score so no one messes with score 
+  
+  function createGame () {
+    
+    let score = 0; // now it is safe inside fn
+    
+    function increaseScore (pts){
+      score += pts;
+      console.log (`You increased ${pts} score`)
+    }
+    
+    function decreaseScore (pts){
+      score -= pts;
+      console.log (`You decreased ${pts} score`)
+    }
+    
+    function getScore() {
+   return score;
+    }
+    
+    
+   return {increaseScore , decreaseScore , getScore} // without this the createGame wont be able to perform the methods dot(.) access
+    
+    
+    
+    
+  }
+  
+  
+    
+  
+   const game = createGame() // we cannot access getScore directky from here
+   game.decreaseScore(55)
+   game.increaseScore(69)
+  console.log (`Final score is ${game.getScore()} pts`)
+  
+  
+  
+  
+  
+  
+</script>
+</body>
+
+</html>
