@@ -80,8 +80,41 @@ function createCounter (){
   console.log (`Final score is ${game.getScore()} pts`)
   
   
-  
-  
+  */
+At the end of createGame, you return an object that contains references to the three functions increaseScore, decreaseScore, and getScore.
+
+This is where destructuring comes into play: instead of returning each function separately or manually accessing them later, you group them together in an object and return them all at once.
+
+By returning this object, you allow access to these functions outside of createGame while keeping the score variable private.
+
+
+
+
+Breakdown of Destructuring:
+
+
+return { increaseScore, decreaseScore, getScore };
+
+This line uses object shorthand syntax to return an object with three properties:
+
+increaseScore
+
+decreaseScore
+
+getScore
+
+
+Each of these properties corresponds to the functions defined within createGame. Since the property names match the function names, you can simply write { increaseScore, decreaseScore, getScore } instead of { increaseScore: increaseScore, decreaseScore: decreaseScore, getScore: getScore }.
+
+By returning an object in this manner, you're able to destructure this object when you use the function, allowing you to access the methods directly:
+
+const { increaseScore, decreaseScore, getScore } = createGame();
+
+increaseScore(10);  // You increased 10 score
+console.log(getScore()); // 10
+
+decreaseScore(5);  // You decreased 5 score
+  */
   
   
 </script>
