@@ -1,0 +1,50 @@
+
+
+.buttonsContainer {
+  display: grid;
+  min-width: 390px;
+  min-height: 40vh;
+  position: relative;
+  
+  
+  
+  grid-template-columns: repeat(4,1fr);
+  margin-top: 20px;
+  row-gap: 10px;
+  column-gap: 5px;
+  
+}
+input{
+  position: relative;
+font-size: 3rem;
+height: 20vh;
+width: 390px;
+border: none;
+background-color: #696969;
+color: whitesmoke;
+}
+
+button:hover {
+filter: brightness(130%)
+}
+button{
+  
+  height:90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #696969;
+  color: white;
+  font-size: 2.5rem;
+  
+}
+
+
+
+.yellow {
+  background-color: darkorange;
+}
+
+body{
+  background-color: black;
+}
