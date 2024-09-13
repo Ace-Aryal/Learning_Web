@@ -34,3 +34,17 @@ p{
   font-size: 1.5rem;
  margin:1rem;
 }
+
+.win,.lose,.tie{
+  font-size: 3rem;
+}
+
+.win{
+  color: limegreen;
+}
+.lose{
+  color: red;
+}
+.tie{
+  color: royalblue;
+}
