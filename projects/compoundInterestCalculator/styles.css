@@ -26,6 +26,7 @@ input{
   border: none;
   border-radius: 0.2rem;
   width: 100px;
+  text-align: center;
 }
 
 #submit {
