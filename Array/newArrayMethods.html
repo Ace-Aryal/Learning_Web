@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<script>
+  const people = ["Dipesh","Krishu","Rojan"]
+ // const newPeople = [...people]  olderway
+//  newPeople[2] ="Ramesh" 
+
+const newPeople = people.with(2,"Ramesh") // new syntax to copy and modify array without mutation
+  console.log (newPeople)
+  
+//  const sortedPeople = [...people].sort()
+  //old syntax to sort array and get a copy
+  
+  //new way
+  const sortedPeople = people.toSorted()
+  console.log (sortedPeople)
+  
+  // same with toReversed() and toSpliced()
+  
+</script>
+</body>
+
+</html>
