@@ -1,0 +1,42 @@
+body{
+  margin:0 0 0 0;
+  padding: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  
+  min-width: 300px;
+  background-color: #61A3BA;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: #FFFFFF;
+}
+
+label{
+  font-size: 1.75rem;
+}
+input{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 0.15rem;
+  border: none;
+  border-radius: 0.2rem;
+  width: 100px;
+}
+
+#submit {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #A2C579;
+  
+}
+span {
+  color: #D2DE32;
+}

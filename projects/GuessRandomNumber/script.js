@@ -123,7 +123,7 @@ guessField.removeAttribute('disabled')
 playGame = true;
 
 startOver.removeChild(para)
-submit.removeAttributeNS('disabled')
+submit.removeAttribute('disabled')
   
 })
 }

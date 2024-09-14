@@ -35,8 +35,11 @@ p{
  margin:1rem;
 }
 
-.win,.lose,.tie{
+.tie{
   font-size: 3rem;
+}
+.win,.lose{
+  font-size: 2rem;
 }
 
 .win{
