@@ -41,3 +41,15 @@ body {
   border-radius: 0.5rem;
   color: snow;
 }
+
+#display {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color:  crimson;
+  
+  
+}
+.invisible {
+  display: none;
+}
