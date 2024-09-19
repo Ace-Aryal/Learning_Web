@@ -14,7 +14,7 @@ announcer = document.querySelector ('h1')
 
 
 
-document.addEventListener('load',(e)=>{
+window.addEventListener('load',(e)=>{
   
     
   switch
@@ -49,7 +49,7 @@ document.addEventListener('load',(e)=>{
   
   })
 
-document.addEventListener('load',(e)=>
+window.addEventListener('load',(e)=>
 {switch (playerTwoDie) {
   case 1:
  playerTwo.setAttribute("src","images/dice1.png")
