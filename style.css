@@ -1,3 +1,40 @@
 body {
-    font-size: 15pt;
+    display: flex;
+    flex-direction: column;
+    background-color: #FB8500;
 }
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 10px;
+  
+}
+
+h1{
+text-align: center;
+color: crimson;
+}
+
+div {
+  margin-top: 1rem;
+  width: 350px;
+  background-color: #219EBC;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  box-shadow: 0 0 1rem gray;
+  
+  
+}
+
+a{
+  text-decoration: none;
+  font-size: 1.5rem;
+  
+  color: aliceblue;
+  
+  
+  
+  
+}
+
