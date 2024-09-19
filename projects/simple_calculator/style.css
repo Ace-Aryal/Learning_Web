@@ -1,4 +1,13 @@
+body{
+  display: flex;
+  justify-content: center;
+}
 
+.calculator{
+  
+  max-width: 400px;
+  
+}
 
 .buttonsContainer {
   display: grid;
