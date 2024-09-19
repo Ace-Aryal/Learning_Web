@@ -13,7 +13,12 @@ announcer = document.querySelector ('h1')
 
 
 
-window.addEventListener('load',(e)=>{switch (playerOneDie) {
+
+document.addEventListener('load',(e)=>{
+  
+    
+  switch
+(playerOneDie) {
   case 1:
  playerOne.setAttribute("src","images/dice1.png")
     break;
@@ -40,9 +45,12 @@ window.addEventListener('load',(e)=>{switch (playerOneDie) {
   
   default:
     // Tab to edit
-}})
+}
+  
+  })
 
-window.addEventListener('load',(e)=>{switch (playerTwoDie) {
+document.addEventListener('load',(e)=>
+{switch (playerTwoDie) {
   case 1:
  playerTwo.setAttribute("src","images/dice1.png")
     break;
@@ -69,6 +77,7 @@ window.addEventListener('load',(e)=>{switch (playerTwoDie) {
   
   default:
     // Tab to edit
+    
 }
 })
 
