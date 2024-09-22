@@ -1,0 +1,43 @@
+h1{
+  text-align: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  max-width: 70vw;
+  align-items: center;
+  
+}
+
+input,button{
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+input{
+  border-radius: 0;
+  border-bottom: 1px solid gray;
+  background-color: #f4f1f8;
+}
+
+body{
+  background-color: #f4f1f8;
+}
+
+button{
+  background-color: #008B8B;
+  padding: 0.5rem;
+  color: aliceblue;
+}
+
+h2{
+  color: crimson;
+}
