@@ -1,0 +1,49 @@
+*{
+  margin: 0 0 0 0;
+  padding: 0;
+  
+}
+h1,p{
+  text-align: center;
+  color:aliceblue;
+  margin-bottom: 1rem;
+  
+}
+
+body{
+  background-color: #008080;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  border-radius:0.4rem;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  box-shadow: 0 0 10px lightgray;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+align-items: center;
+
+  
+}
+button{
+  margin-top: 1rem;
+font-size: 1.5rem;
+border-radius: 0.25rem;
+padding: 0.25rem;
+border: none;
+box-shadow: 0 0 10px lightgray;
+}
+
+p{
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
+}
