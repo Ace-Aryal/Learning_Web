@@ -19,11 +19,15 @@
       
     
     <input type="number" name="" id="hour" placeholder="Hours" value="" max="100" min="0" > 
-        <input type="number" name="" id="minute" placeholder="Mins" value=""max="59" min="0"> 
-        <input type="number" name="" id="second" placeholder="Secs" max="59" min="0"> <br>
+        <input type="number" name="" id="minute" placeholder="Mins" value=""max="60" min="0"> 
+        <input type="number" name="" id="second" placeholder="Secs" max="60" min="0"> <br>
     </div>
-        <button type="submit">Set Timer</button>
-    
+    <div class="buttons">
+      
+
+        <button type="submit" id="submit">Set Timer</button>
+        <button type="reset" id="reset">Reset Timer</button>
+        </div>
   </form>
   <p id="timerUp"></p>
 </main>

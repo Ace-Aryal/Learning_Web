@@ -1,96 +1,96 @@
-const button = document.querySelector ("button")
+// creating global varibales 
+
+
+const submitButton = document.querySelector ("#submit")
+const reset = document.querySelector ("#reset")
 let timerState = false
 let timerUp = document.querySelector ("#timerUp")
-let hourD =document.querySelector ("#hour")
-let minutesD = document.querySelector ("#minute")
- let secondsD = document.querySelector ("#second")
+const hourD =document.querySelector ("#hour")
+const minutesD = document.querySelector ("#minute")
+ const secondsD = document.querySelector ("#second")
  let ringing = false
- let timerSound = new Audio("./sound/pirates-bgm-v3-61425.mp3")
+ 
+ const timerSound = new Audio("./sound/pirates-bgm-v3-61425.mp3")
+ let hours
+ let minutes
+ let seconds
  let interval
-if (!timerState) {
-  
-
-button.addEventListener("click",setTimer)
-
-}
-
-function setTimer(e){
-  
-  
-  button.innerText = "stop"
+ 
+ 
+ // setting timer
+submitButton.addEventListener('click',e => {
   e.preventDefault()
   
-  let hours = document.querySelector ("#hour").value
-  
-   let minutes = document.querySelector ("#minute").value
   
   
-  let seconds = document.querySelector ("#second").value
-  if(seconds || hours || minutes){
-  timerState = true
-   interval = setInterval( ()=>{
+  hours =document.querySelector ("#hour").value
+  minutes =document.querySelector ("#minute").value
+  seconds = document.querySelector ("#second").value
+  
+  if (!timerState) {
     
-    if (seconds) {
-      seconds--
-      secondsD.value = seconds
-    }
-    else if (minutes) {
-      minutes--
-      seconds = 60
-      minutesD.value = minutes
-    }
-    else if (hours) {
-      hours--
-      minutes = 60
-      hourD.value = hours
-    }
-    else {
+  
+ interval =  setInterval( timer , 1000)
+ timerState= true
+  }
+})
+
+
+
+
+   // timer function
+    function timer() {
       
-      timerSound.play()
-      ringing= true
-      reset()
-      timerUp.innerText = `Timer up`
-      clearInterval(interval)
-      
-      
-    }
     
-  },1000)
+  if (seconds >0) {
+    seconds--
+    
   }
-  else {
-    reset()
+  else if (minutes >0) {
+    
+    minutes--
+    seconds = 59
+    
+    
   }
+  else if (hours>0) {
+    
+    hours--
+    minutes = 60
+    
+    
+    
+  }
+  else { // when timer is up
+    timerSound.play()
+    ringing = true
+    reset.click()
+    timerUp.innerText = "Timer up ! Double click the reset button to stop timer sound"
+    
+  }
+   
+    
+    hourD.value = hours
+    minutesD.value = minutes
+    secondsD.value = seconds
 }
-  
-  function reset(){
-    hourD.value = null
-    minutesD.value= null
-    secondsD.value = null
-    seconds = null
-    hours = null
-    minutes = null
-    timerUp.innerText = ""
-    
-    
-  }
-  
-  button.addEventListener("click" , e=> {
-    e.preventDefault()
-    
-    if(timerState) {
-      secondsD.value = null
-      reset()
-      button.innerText = "Timer"
-      timerState = false
-      
-    }
-    
-    if(ringing) {
-      timerSound.pause()
-      timerSound.currentTime = 0
-    }
-  })
 
+// normal reset
+reset.addEventListener('click', e => {
+  minutes = 0
+  seconds = 0
+  hours = 0
+  clearInterval(interval)
+   if (!ringing) {
+  timerState  = false
+}
+})
 
-  
-    
+// reset after timer up 
+reset.addEventListener('dblclick', function () {
+  timerSound.pause()
+  timerSound.currentTime = 0;
+  timerUp.innerHTML = "";
+  timerState = false
+  ringing = false
+})
