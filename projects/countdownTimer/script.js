@@ -21,7 +21,9 @@ const minutesD = document.querySelector ("#minute")
 submitButton.addEventListener('click',e => {
   e.preventDefault()
   
-  
+  hourD.setAttribute("readonly","readonly")
+  minutesD.setAttribute("readonly","readonly")
+  secondsD.setAttribute("readonly","readonly")
   
   hours =document.querySelector ("#hour").value
   minutes =document.querySelector ("#minute").value
@@ -84,6 +86,7 @@ reset.addEventListener('click', e => {
    if (!ringing) {
   timerState  = false
 }
+makeWrittable()
 })
 
 // reset after timer up 
@@ -93,4 +96,12 @@ reset.addEventListener('dblclick', function () {
   timerUp.innerHTML = "";
   timerState = false
   ringing = false
+  makeWrittable()
 })
+
+
+function makeWrittable() {
+  hourD.removeAttribute("readonly")
+  minutesD.removeAttribute("readonly")
+  secondsD.removeAttribute("readonly")
+}
