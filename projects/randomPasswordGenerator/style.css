@@ -57,3 +57,12 @@ button{
   background-color: coral;
   color: navajowhite;
 }
+.pwLength{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+#length{
+  width: 30px;
+}
