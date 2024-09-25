@@ -58,7 +58,8 @@ submitButton.addEventListener('click',e => {
   else if (hours>0) {
     
     hours--
-    minutes = 60
+    minutes = 59
+    seconds = 59
     
     
     
@@ -71,10 +72,11 @@ submitButton.addEventListener('click',e => {
     
   }
    
-    
-    hourD.value = hours
-    minutesD.value = minutes
     secondsD.value = seconds
+    minutesD.value = minutes
+    hourD.value = hours
+    
+    
 }
 
 // normal reset
