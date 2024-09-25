@@ -2,7 +2,7 @@ const upperCaseChars =`QWERTYUIOPASDFGHJKLZXCVBNM`
 const lowerCaseChars = `qwertyuiopasdfghjklzxcvbnm`
 const numbers =`1234567890`
 const specialSymbols =`!@#£%^&*()-'":;,?`
-
+const copyButton = document.querySelector ("#clipboard")
 
 
 const display = document.querySelector ("#display")
@@ -16,7 +16,6 @@ let length
 button.addEventListener('click',e=> {
   
     
-  
   e.preventDefault()
   length = document.querySelector ("#length").value
  if (length <4 ) {
@@ -40,7 +39,11 @@ button.addEventListener('click',e=> {
 }
 )
 
-
+copyButton.addEventListener('click', e => {
+  display.select()
+    document.execCommand("copy")
+  
+})
 
 
 

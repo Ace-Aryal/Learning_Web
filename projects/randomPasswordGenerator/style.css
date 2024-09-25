@@ -51,6 +51,10 @@ form{
   
 }
 
+#display {
+  padding-right: 1.35rem;
+}
+
 button{
   align-self: center;
   width: 40vw;
@@ -60,9 +64,22 @@ button{
 .pwLength{
   display: flex;
   justify-content: space-around;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 #length{
   width: 30px;
+  font-size:1.25rem;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.output{
+  position: relative;
+}
+#clipboard{
+  position: absolute;
+  right: 0.5rem;
+  top: 0.35rem;
+  
 }
