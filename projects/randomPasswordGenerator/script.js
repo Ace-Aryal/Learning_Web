@@ -42,7 +42,7 @@ button.addEventListener('click',e=> {
 copyButton.addEventListener('click', e => {
   display.select()
     document.execCommand("copy")
-  
+  alert(`Text copied to clipboard`)
 })
 
 

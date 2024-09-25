@@ -81,5 +81,9 @@ button{
   position: absolute;
   right: 0.5rem;
   top: 0.35rem;
+  color: black;
   
+}
+form{
+  color: #f0f0f0;
 }
