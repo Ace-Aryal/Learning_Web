@@ -72,6 +72,7 @@ button{
   font-size:1.25rem;
   border-radius: 0.25rem;
   border: none;
+  text-align: center;
 }
 
 .output{
