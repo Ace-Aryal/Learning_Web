@@ -10,10 +10,15 @@ body{
   
   
 }
+
+
+
 h1{
   margin: 1rem 0 0 1rem;
   text-align: left;
   margin-bottom: 1rem;
+  
+  align-self: flex-start;
 }
 
 .pageContainer{
@@ -74,6 +79,7 @@ color: aliceblue;
    background-color: #e7e8eb;
    width: 1.2rem;
    height: 1.2rem;
+   font-size: 1.25rem;
  }
  .taskDisplay{
    border: none;
@@ -81,7 +87,7 @@ color: aliceblue;
    background-color:#f4f1f8;
    outline: none;
    width: 280px;
-   padding: 0.25rem 1rem;
+   padding: 0.3rem 1rem;
    border-radius: 1rem;
    position: absolute;
    bottom:0.08rem ;
@@ -89,7 +95,7 @@ color: aliceblue;
  }
  .taskDisplayCompleted{
    text-decoration: line-through;
-   background-color: palegreen;
+   background-color: #d1ffbd;
  }
  
  /* Hide the default checkbox */

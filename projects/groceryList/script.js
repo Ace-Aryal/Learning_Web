@@ -1,8 +1,14 @@
 
 const addGroceryButton = document.querySelector ("#addItem")
 const displayArea = document.querySelector (".displayArea")
-
+const mode = document.querySelector ("#mode")
 let  deleteButton
+const body = document.querySelector ("body")
+
+
+
+
+
 
 addGroceryButton.addEventListener("click",addGrocery
 
@@ -12,8 +18,16 @@ function addGrocery(e){
 
   e.preventDefault()
   
+  
   const inputGrocery = document.querySelector ("#inputGrocery")
-  const grocery = inputGrocery.value
+  if (inputGrocery.value) {
+    
+  
+   const grocery = inputGrocery.value
+   inputGrocery.value = null
+   //creating elementa
+  
+  
   const itemDiv = document.createElement("div")
   const togetherDiv = document.createElement("div")
   const label = document.createElement("label")
@@ -22,12 +36,12 @@ function addGrocery(e){
   const span = document.createElement("span")
   const taskParagraph = document.createElement("input")
   let taskParagraphSpan = document.createElement("span")
-    
-  
-   deleteButton = document.createElement("button")
+     deleteButton = document.createElement("button")
   
   
-  displayArea.appendChild(itemDiv)
+  
+  //appending ekementa
+  displayArea.prepend(itemDiv)
   
   itemDiv.appendChild(togetherDiv)
   itemDiv.appendChild(deleteButton)
@@ -36,6 +50,8 @@ function addGrocery(e){
   label.appendChild(checkBox)
   label.appendChild(span)
   
+  
+  // adding classlist and values 
   itemDiv.classList.add("item")
   togetherDiv.classList.add("together")
   label.classList.add("circular-checkbox")
@@ -47,14 +63,33 @@ function addGrocery(e){
   taskParagraph.setAttribute("readonly","readonly")
   deleteButton.addEventListener('click',removeItem)
 
+// adding event listener to mark as completed 
+taskParagraph.addEventListener('click', markAsCompleted)
+
+let marked = false
+checkBox.addEventListener("change",e=>{
+  if(checkBox.checked) {
+    taskParagraph.classList.add("taskDisplayCompleted")
+  
+  }
+  else {
+taskParagraph.classList.remove("taskDisplayCompleted")
+  }
+  
+})
+
+
+
+//neated fn to remove items 
 function removeItem(e) {
   e.preventDefault 
   displayArea.removeChild(itemDiv)
 }
 
 
-taskParagraph.addEventListener('click', markAsCompleted)
-var marked = false
+
+// marked as completed fb
+
 function markAsCompleted() {
 
 if (marked) {
@@ -76,7 +111,7 @@ else  if(!marked){
 }
 
 
-
+}
   
 }
 
