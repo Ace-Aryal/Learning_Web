@@ -42,6 +42,7 @@ width: 260px;
 padding: 0.5rem 1rem;
 padding-right: 3.5rem;
 border-radius: 1.2rem;
+outline: none;
 }
 
 .displayArea{
