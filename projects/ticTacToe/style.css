@@ -7,11 +7,14 @@ body {
   background-color: #FB8500;
   text-align: center;
 }
+
 .container {
   margin-top: 2rem;
-  height: 40vh;
+  height: 300px;
   display: flex;
-  justify-content: center;
+  
+  flex-direction: column;
+  align-items: center;
 }
 
 .game{
@@ -33,13 +36,14 @@ body {
   background-color: #219EBC;
 }
 #reset {
-  
+  margin-top: 0;
   border: none;
   font-size: 1.5rem;
   background-color: #023047;
   padding: 0.25rem;
   border-radius: 0.5rem;
   color: snow;
+  
 }
 
 #display {

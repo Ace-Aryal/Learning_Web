@@ -8,3 +8,4 @@ console.log(num)
 
 
 
+// yoda notation
