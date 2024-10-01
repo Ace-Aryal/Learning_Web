@@ -1,0 +1,58 @@
+h1{
+  color: darkslategray;
+}
+
+
+.slider{
+  
+  width: 25rem;
+  height: 43rem;
+  position: relative;
+  overflow: hidden;
+  margin : auto;
+}
+
+
+
+
+
+img{
+  width: 100%;
+  height: auto;
+  display : none;
+  transition: ease-in-out 200ms;
+}
+
+.showImage {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto ;
+  
+  
+  
+  
+}
+
+
+
+button{
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.previous {
+  position: absolute;
+  bottom: 50%;
+  left: 0%;
+  
+}
+.next{
+  position: absolute;
+  bottom: 50%;
+  right: 0%;
+
+}
+

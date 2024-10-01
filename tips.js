@@ -8,4 +8,4 @@ console.log(num)
 
 
 
-// yoda notation
+// yoda notation for equal comparison
