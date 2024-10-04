@@ -17,6 +17,6 @@ button.addEventListener("click",e => {
   console.log(grandTotal)
   let tipPerPerson = (grandTotal/numberOfPeople).toFixed(2)
   
-  display.innerText = `Tip per person is ${tipPerPerson}`
+  display.innerText = `Split per person is ${tipPerPerson}`
   }
 })
