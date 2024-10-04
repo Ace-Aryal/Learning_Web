@@ -14,13 +14,17 @@ body{
   background-color: black;
 }
 h1{
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
+}
+hr{
+  
 }
 .stopwatch {
   
   text-align: center;
 }
 .container {
+  margin-top: 1rem;
   display: flex;
   width: 350px;
   justify-content: center;
