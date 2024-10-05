@@ -29,10 +29,11 @@ h1{
   
 }
 .quiz{
-  margin-top: 1rem;
+  margin: 1rem 0 0.5rem 0 ;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  
 }
 
 
@@ -57,4 +58,40 @@ button{
   background-color: orangered;
   color: snow;
   padding:0.1rem 0.5rem;
+}
+.restart{
+  margin: 1rem 0 0 0;
+  position: relative;
+  bottom: auto;
+  right: auto;
+  width: 5rem;
+  background-color: lightcoral;
+}
+
+#scoreDisplay{
+  position: absolute;
+  border: none;
+  background-color: aliceblue;
+  left: 2.2rem;
+  bottom: 0.75rem;
+  outline:none;
+  
+}
+
+#timer,#index{
+  width: 1.5rem;
+  padding-right:0.2rem ;
+  padding-left: 0.2rem;
+position: absolute;
+  border: none;
+  background-color: aliceblue;
+  left: 7.5rem;
+  bottom: 0.75rem;
+  outline:none;
+}
+
+#index{
+  width: 2.5rem;
+  text-align: center;
+  left: 9.85rem;
 }
