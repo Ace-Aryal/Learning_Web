@@ -41,7 +41,7 @@ async function fetchQuizQuestions() {
   }
   catch (e) {
     
-    console.error(e)
+    gameOver()
   }
 }
 function validateQuestionsAndAnswers() {
