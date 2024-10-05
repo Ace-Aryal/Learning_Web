@@ -4,12 +4,14 @@ body {
     background-color: #FB8500;
     justify-content: center;
     align-items: center;
+    
+    
 }
 .projectsContainer {
   display: flex;
   flex-direction: column;
   position: relative;
-  
+  padding-left:0 3rem;
 }
 
 h1{
@@ -19,7 +21,7 @@ color: crimson;
 
 div {
   margin-top: 1rem;
-  width: 350px;
+  width: 330px;
   background-color: #219EBC;
   border-radius: 0.5rem;
   padding: 0.3rem 0.75rem;
