@@ -79,6 +79,7 @@ button{
 }
 
 #timer,#index{
+  text-align: center;
   width: 1.5rem;
   padding-right:0.2rem ;
   padding-left: 0.2rem;
@@ -92,6 +93,6 @@ position: absolute;
 
 #index{
   width: 2.5rem;
-  text-align: center;
+  
   left: 9.85rem;
 }

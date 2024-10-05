@@ -118,6 +118,7 @@ function gameOver() {
   
   quizContaner.remove()
   const newQuizContainer = document.createElement("div")
+  newQuizContainer.style.textAlign = "center"
    newButton = document.createElement("button")
   newQuizContainer.classList.add("quizSection")
   newButton.classList.add("restart")
