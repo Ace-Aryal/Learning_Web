@@ -3,7 +3,7 @@ const IMGPATH = "https://image.tmdb.org/t/p/w1280"
 const SEARCHAPI =  "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query="
 const moviesContainer= document.querySelector("#movie-box")   
 const searchBar = document.querySelector ("#search")
-
+const trendingHeadung = document.querySelector ("h1")
 window.addEventListener("DOMContentLoaded",()=> {
   moviePageGenerator(APIURL)
 }
@@ -22,13 +22,17 @@ searchBar.addEventListener("input", () => {
 
   // Check if the query is not empty
   if (query) {
+    trendingHeadung.remove()
     // Set a timeout to debounce the input
     debounceTimeout = setTimeout(() => {
       moviePageGenerator(`${SEARCHAPI}${query}`);
     }, 300);  // Wait 300ms before making the API call
   }
   else{
-    moviePageGenerator(APIURL)
+    const trending = document.createElement ("h1")
+     
+     
+    
   }
 });
 
@@ -69,7 +73,7 @@ async function moviePageGenerator (url) {
     movieBox.classList.add("box")
     overlay.classList.add("overlay")
     titleArea.classList.add("title")
-    movieImage.src = `https://image.tmdb.org/t/p/w1280${imagePath}` ?? `img/image-missing.png`
+    movieImage.src = `https://image.tmdb.org/t/p/w1280${imagePath}` || `./img/image-missing.png`
      
     moviesContainer.appendChild(movieBox)
     //new learning 
