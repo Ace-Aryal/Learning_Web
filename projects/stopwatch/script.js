@@ -93,13 +93,18 @@ function reset(e){
     centisecondsDisp.value="00"
     lapDisplayArea.innerHTML=""
     
+    
   }
    if(stopwatchStatus==="started") {
+     
     const lapDisplay = document.createElement ("p")
     lapDisplay.classList.add("lapDisplay")
-    lapDisplay.innerText = `Lap ${lapIndex} at ${minutesDisp.value}min ${secondsDisp.value}.${centisecondsDisp.value} sec`
+    lapDisplay.innerText = `Lap ${lapIndex} at ${Math.floor(minutesDisp.value)} min ${Math.floor(secondsDisp.value)}.${centisecondsDisp.value} sec`
     lapDisplayArea.appendChild(lapDisplay)
-    lapIndex++
+    if (isStopWatchRunning) {
+      lapIndex++
+    }
+    
   }
 }
 
@@ -127,10 +132,12 @@ function lap () {
     isStopWatchRunning = true
     resetButton.innerText = `Lap`
     
+    
   }
   else{
     resetButton.innerText = `Reset`
     isStopWatchRunning= false
+    lapIndex = "1"
   }
   
-}
+} 
