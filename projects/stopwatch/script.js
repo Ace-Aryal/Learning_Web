@@ -99,7 +99,7 @@ function reset(e){
      
     const lapDisplay = document.createElement ("p")
     lapDisplay.classList.add("lapDisplay")
-    lapDisplay.innerText = `Lap ${lapIndex} at ${Math.floor(minutesDisp.value)} min ${Math.floor(secondsDisp.value)}.${centisecondsDisp.value} sec`
+    lapDisplay.innerHTML = `Lap ${lapIndex} at <code>${Math.floor(minutesDisp.value)} min ${Math.floor(secondsDisp.value)}.${centisecondsDisp.value}  sec </code>`
     lapDisplayArea.appendChild(lapDisplay)
     if (isStopWatchRunning) {
       lapIndex++

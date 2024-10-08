@@ -66,3 +66,8 @@ button{
   margin-top: 1rem;
   color: whitesmoke;
 }
+code{
+  background-color: dimgray;
+  padding: 0.25rem 0.5rem;
+  border-radius:0.15rem;
+}
