@@ -3,7 +3,7 @@ const IMGPATH = "https://image.tmdb.org/t/p/w1280"
 const SEARCHAPI =  "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query="
 const moviesContainer= document.querySelector("#movie-box")   
 const searchBar = document.querySelector ("#search")
-const trendingHeadung = document.querySelector ("h1")
+const trendingHeading = document.querySelector ("h1")
 window.addEventListener("DOMContentLoaded",()=> {
   moviePageGenerator(APIURL)
 }
@@ -22,15 +22,15 @@ searchBar.addEventListener("input", () => {
 
   // Check if the query is not empty
   if (query) {
-    trendingHeadung.remove()
+    trendingHeading.remove()
     // Set a timeout to debounce the input
     debounceTimeout = setTimeout(() => {
       moviePageGenerator(`${SEARCHAPI}${query}`);
     }, 300);  // Wait 300ms before making the API call
   }
   else{
-    const trending = document.createElement ("h1")
-     
+    trendingHeading = document.createElement ("h1")
+     trendingHeading.innerText = "Trending Movies"
      
     
   }
@@ -91,6 +91,6 @@ async function moviePageGenerator (url) {
   }
   catch (e) {
     console.log(e)
-    moviesContainer.innerHTML = `<h1>Check Your Network And Try Again</h1>`
+    trendingHeading.innerText = `Check Your Network And Try Again`
   }
 }
