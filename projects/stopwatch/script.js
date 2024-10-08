@@ -3,10 +3,11 @@ const secondsDisp  = document.querySelector ("#seconds")
 const centisecondsDisp = document.querySelector ("#centiseconds")
 const resetButton = document.querySelector ("#reset")
 const toggler = document.querySelector ("#toggler")
+const lapDisplayArea = document.querySelector ("#lapDisplayArea")
 let stopwatchStatus = "notStarted"
-
+let lapIndex = 1
 let stopwatchInterval
-
+let isStopWatchRunning = false
 resetButton.addEventListener("click", reset)
 
 toggler.addEventListener("click",
@@ -20,14 +21,17 @@ function toggle (e) {
     
     toggler.innerText = "Stop"
     start()
+    lap()
   }
 else  if (stopwatchStatus === "started") {
     stop()
+    lap()
+    
     
   }
  else if (stopwatchStatus === "stopped") {
     resume()
-    
+    lap()
   }
   
   
@@ -87,10 +91,15 @@ function reset(e){
     minutesDisp.value ="00"
     secondsDisp.value ="00"
     centisecondsDisp.value="00"
-  }
-  else {
+    lapDisplayArea.innerHTML=""
     
-    stop() // if the timer is not stopped the reset button stops it first
+  }
+   if(stopwatchStatus==="started") {
+    const lapDisplay = document.createElement ("p")
+    lapDisplay.classList.add("lapDisplay")
+    lapDisplay.innerText = `Lap ${lapIndex} at ${minutesDisp.value}min ${secondsDisp.value}.${centisecondsDisp.value} sec`
+    lapDisplayArea.appendChild(lapDisplay)
+    lapIndex++
   }
 }
 
@@ -111,4 +120,17 @@ function incrementMinutes () {
         minutesDisp.value = formatNumber(minutesDisp.value)
       }
       
+}
+
+function lap () {
+  if (stopwatchStatus ===`started`) {
+    isStopWatchRunning = true
+    resetButton.innerText = `Lap`
+    
+  }
+  else{
+    resetButton.innerText = `Reset`
+    isStopWatchRunning= false
+  }
+  
 }

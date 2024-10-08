@@ -90,7 +90,7 @@ async function moviePageGenerator (url) {
   }
   }
   catch (e) {
-    console.log(e)
+    console.error(e)
     trendingHeading.innerText = `Check Your Network And Try Again`
   }
 }

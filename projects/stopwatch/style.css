@@ -61,3 +61,8 @@ button{
 #toggler{
   background-color: seagreen;
 }
+
+.lapDisplay{
+  margin-top: 1rem;
+  color: whitesmoke;
+}
