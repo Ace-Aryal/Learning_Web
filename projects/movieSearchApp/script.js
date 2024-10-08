@@ -73,8 +73,8 @@ async function moviePageGenerator (url) {
     movieBox.classList.add("box")
     overlay.classList.add("overlay")
     titleArea.classList.add("title")
-    movieImage.src = `https://image.tmdb.org/t/p/w1280${imagePath}` || `./img/image-missing.png`
-     
+    movieImage.src = imagePath?`https://image.tmdb.org/t/p/w1280${imagePath}`:`img/image-missing.png`
+     console.log(imagePath)
     moviesContainer.appendChild(movieBox)
     //new learning 
     movieBox.appendChild(movieImage)
