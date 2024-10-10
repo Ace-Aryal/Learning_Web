@@ -2,22 +2,28 @@ const APIURL = `https://restcountries.com/v3.1/name/`
 let inputField
 const searchButton = document.querySelector ("button")
 const displayArea = document.querySelector (".displayArea")
-
+let isFirstTime = true
+window.addEventListener("DOMContentLoaded",registerInput)
 searchButton.addEventListener("click",registerInput)
 
 
 function registerInput (e){
-  
+  let countryName
   // Tab to edit
   displayArea.classList.remove("errorDisplay")
   displayArea.innerHTML =""
   inputField = document.querySelector ("#inputField")
   e.preventDefault ()
-  if (inputField.value) {
+  if (inputField.value ) {
      countryName = inputField.value
      inputField.value = ""
     getAPIData(countryName)
   
+  }
+  else if (isFirstTime) {
+    countryName ="Nepal"
+    getAPIData(countryName)
+    isFirstTime = false
   }
   else{
     // display some message
