@@ -23,6 +23,7 @@ async function registerInput  (e){
   else{
     
     city = cityInput.value
+    cityInput.value =""
   }
   
    
