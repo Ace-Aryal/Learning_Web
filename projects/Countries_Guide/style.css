@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3d64e6;
+  width:100vw;
+  height: 70vh;
+  
+}
+
+
+
+.container {
+  
+justify-self: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #E6E6FA;
+  width: 70% ;
+  padding: 1.5rem 1.5rem;
+  border-radius: 0.25rem;
+}
+
+@media (min-width:768px){
+  .container{
+    width: 50%;
+    height: 70% ;
+    
+  }
+  body{
+    height: 100%;
+  }
+}
+
+.inputArea{
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+.displayArea{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+input{
+  width: 65%;
+  background-color: #E6E6FA;
+  padding: 0.2rem;
+  border:none;
+  border-bottom: 2px solid  #3d64e6;
+  outline: none;
+}
+
+button{
+  width: 25%;
+  background-color:#3d64e6;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  color: snow;
+}
+
+.flagArea{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  margin: 1rem 0;
+  
+}
+img{
+  margin: 0.5rem;
+  height: 100px;
+  width: auto;
+  
+}
+.descriptionArea{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+span{
+  color: dimgray;
+  font-size: 0.95rem;
+}
+
+.maps{
+  height: 200px;
+  width: auto;
+}
+
+.errorDisplay{
+  text-align: center;
+  color: indianred;
+  
+}
+

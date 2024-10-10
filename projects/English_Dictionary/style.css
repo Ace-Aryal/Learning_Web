@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #ae9eff;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: #E6E6FA;
+  padding: 2.4rem 1.5rem;
+  gap: 2rem;
+  border-radius: 0.35rem;
+}
+
+@media  (min-width:768px ) {
+  .container{
+    width: 500px;
+  }
+}
+#inputArea{
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+#inputField{
+background-color: #E6E6FA ;
+width: 70%;
+  font-size: 1.1rem;
+  padding: 0.25rem ;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid #ae9ebf;
+  
+}
+button{
+  outline: none;
+  background-color: #ae9eff ;
+  border: none;
+  padding: 0.25rem 1rem;
+  color: snow;
+  border-radius: 0.1rem
+}
+
+.wordContainer{
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0.25rem 0 0.25rem;
+}
+h1{
+  font-size: 1.5rem;
+  
+}
+i{
+  color: #ae9eff;
+}
+#displayArea{
+  display: flex;
+  flex-direction: column;
+}
+
+small{
+  
+  font-size: 0.75rem;
+  margin-top: 0;
+  font-style: italic;
+  color: darkgray;
+  
+}
+
+.meaning{
+  margin: 0.5rem 0;
+}
+
+.example{
+  background-color: #E6E6FA;
+  outline: none;
+  border: none;
+  margin-top: 0.2rem;
+  padding: 0.2rem 0.1rem;
+  font-size: 1rem;
+  font-style: italic;
+  border-left: 3px solid #ae9eff;
+}

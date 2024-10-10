@@ -7,16 +7,25 @@ const card = document.querySelector (".card")
 const getWeatherBtn = document.querySelector (".getWeather")
 
 const apiKey = "bd5e378503939ddaee76f12ad7a97608"
+let isFirstTime = true
 
-
-
+window.addEventListener("DOMContentLoaded",registerInput)
 // Event listener fn
-getWeatherBtn.addEventListener('click',async (e)=>{
+getWeatherBtn.addEventListener('click', registerInput)
+
+async function registerInput  (e){
   e.preventDefault();
   
-  const city = cityInput.value;
+  if (isFirstTime) {
+  city = "Nepal"
+  isFirstTime = false
+  }
+  else{
+    
+    city = cityInput.value
+  }
   
-  
+   
   if(city){
     
     try { // recieving data from fetch in json format
@@ -37,21 +46,28 @@ getWeatherBtn.addEventListener('click',async (e)=>{
   else {
     displayError(`please Enter a city`)
   }
-})
+}
 
 async function getWeatherData(city) {
   // fetching api via promise and returning promise 
   //data in json format to event listener
   
   const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+  try{
   const response = await fetch(apiURL)
   if (!response.ok) {
-    displayError(`Couldn't get weather data please try later (:`)
+    throw new Error("Couldn't get weather")
   } else {
     
   
   const data = await response.json()
   return data; // returning data to event listener
+}
+}
+catch (e) {
+  // Tab to edit
+  console.error(e)
+  displayError(`Couldn't get weather data please try later (:`)
 }
 }
 

@@ -46,7 +46,7 @@ async function moviePageGenerator (url) {
   moviesContainer.innerHTML = ""
   
   if (!response.ok) {
-    throw new Error("Couldn't fetch Movie")
+ //  const error = Throw new Error("Couldn't fetch Movie")
     
   }
   

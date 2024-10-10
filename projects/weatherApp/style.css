@@ -19,7 +19,7 @@ body{
   border: 1px solid hsla(0,0%,20%,0.3);
   border-radius: 7px;
   margin:10px;
-  width:150px;
+  width:130px;
   outline: 0;
   transition: ease-in-out 100ms;
 }
@@ -36,9 +36,15 @@ button[type="submit"] {
   border-radius: 5px;
   background-color: #de7941;
 color: snow;
-  width:11rem;
+  width:9rem;
   
   
+}
+
+@media (min-width:768px){
+  button[type="submit"]{
+    width:11rem;
+  }
 }
 
 button[type="submit"]:hover {
