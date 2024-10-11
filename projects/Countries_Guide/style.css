@@ -71,6 +71,7 @@ button{
 
 .flagArea{
   display: flex;
+ height: 200px ;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -80,8 +81,9 @@ button{
 }
 img{
   margin: 0.5rem;
-  height: 100px;
+  height: 80%;
   width: auto;
+  object-fit: contain;
   
 }
 .descriptionArea{
