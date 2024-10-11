@@ -61,7 +61,7 @@ function createPage(data,word) {
   const wordClauseDisplay = document.createElement ("span")
   const meaningDisplay = document.createElement ("span")
   
-  const exampleDisplay = document.createElement ("input")
+  const exampleDisplay = document.createElement ("p")
   
   appendElements()
   function appendElements() {
@@ -86,10 +86,10 @@ function createPage(data,word) {
     wordClauseDisplay.classList.add("wordClause")
     meaningDisplay.classList.add("meaning")
     exampleDisplay.classList.add("example")
-  exampleDisplay.setAttribute("type","textarea")
-  exampleDisplay.setAttribute("rows","5")
+
+
   }
-  exampleDisplay.setAttribute("disabled","")
+  
   
   addContents()
   function addContents() {
@@ -122,7 +122,7 @@ function createPage(data,word) {
       ${data[0]?.meanings[2]?.definitions[0]?.definition ?? ""}`
       
       
-    exampleDisplay.value= 
+    exampleDisplay.innerText= 
     ` ${data[0].meanings[0]?.definitions[0]?.example ?? ""}`
     exampleDisplay.setAttribute("readonly","")
   
