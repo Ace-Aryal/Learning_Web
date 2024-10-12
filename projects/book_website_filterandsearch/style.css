@@ -1,0 +1,142 @@
+:root{
+  --primaryColor : #6759ff;
+}
+
+
+*{
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+body{
+  background-color: #f2f8fc;
+  padding: 0.5rem;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+}
+.search{
+  display: flex;
+  justify-content: space-around;
+}
+
+input{
+  background-color: transparent;
+  width: 60%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #110f29;
+  padding: 0.5rem;
+  transition: 300ms;
+}
+
+#searchButton{
+  width: 20%;
+  background-color: #6759ff;
+  border: none;
+  border-radius: 0.25rem;
+  color: snow;
+  transition: 300ms;
+}
+#searchButton:focus{
+  color: var(--primaryColor);
+  background-color: snow;
+  
+  border: 2px solid var(--primaryColor);
+}
+
+input:focus{
+  border-bottom-color: #6759ff;
+}
+
+@media screen and (min-width:768px){
+  input{
+    width:50%;
+  }
+#searchButton  {
+    width: 12%;
+    
+  }
+}
+
+
+button{
+  outline: none;
+}
+
+.filters{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  
+}
+
+
+.filterButtons {
+  background-color: transparent;
+  padding: 0.6rem 1rem;
+  border-radius: 1.2rem;
+  border: 2px solid #6759ff;
+  color: #6759ff;
+  transition:250ms;
+}
+
+.filterButtons:focus{
+  background-color: var(--primaryColor);
+  color: snow;
+}
+.displayArea{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+.itemCard{
+  width: 45%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 0.25rem lightgray;
+
+}
+
+@media (min-width:768px){
+  .itemCard{
+    width: 22.5%;
+  }
+}
+
+
+
+img{
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+  padding: 1rem 0;
+}
+
+h2,p {
+  padding: 0 0.75rem;
+  
+  
+}
+p{
+  margin: 0.2rem 0 1rem 0;
+}
+
+.errorMessage{
+  color: indianred;
+}
+p{
+  font-size: 0.8rem;
+  color: dimgray;
+  font-style: italic;
+}
