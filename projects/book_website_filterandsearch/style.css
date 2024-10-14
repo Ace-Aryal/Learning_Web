@@ -82,6 +82,7 @@ button{
   border-radius: 1.2rem;
   border: 2px solid #6759ff;
   color: #6759ff;
+  cursor: pointer;
   transition:250ms;
 }
 

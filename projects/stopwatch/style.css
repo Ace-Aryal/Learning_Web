@@ -6,12 +6,14 @@
 }
 
 body{
-  display: flex;
+  margin-top: 2rem;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 90vh;
   background-color: black;
+  max-height:90vh;
 }
 h1{
   margin-bottom: 0rem;
@@ -20,8 +22,9 @@ hr{
   
 }
 .stopwatch {
-  
+
   text-align: center;
+  max-height: 80vh;
 }
 .container {
   margin-top: 1rem;
@@ -30,6 +33,7 @@ hr{
   justify-content: center;
   font-size: 3rem;
   margin-bottom: 1rem;
+  
 }
 
 .seperator{
@@ -65,9 +69,16 @@ button{
 .lapDisplay{
   margin-top: 1rem;
   color: whitesmoke;
+  
 }
 code{
   background-color: dimgray;
   padding: 0.25rem 0.5rem;
   border-radius:0.15rem;
+}
+
+.lapDisplayArea{
+  overflow: hidden;
+overflow-y: scroll;
+height: 50vh;
 }

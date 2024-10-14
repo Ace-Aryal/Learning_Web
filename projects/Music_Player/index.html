@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer>script.js</script>
+   <script src="https://kit.fontawesome.com/f06ee4b06e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    
+  </section>
+<main class="container">
+  <section class="playlistToggle">
+    <input type="search" name="" id="searchBar" placeholder="search your song">
+    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <!--<i class="fa fa-times" aria-hidden="true"></i>-->
+  </section>
+  <section class="posterAndTitle">
+    <img src="./assets/images/sunflower.jpg" alt="sunflower">
+    <h2 id="title"> Sunflower </h2>
+    <span class="artist">Post Malone & Swan Lee  </span>
+  </section>
+  <section class="player">
+    <div class="controls">
+      <i class="fa fa-random" aria-hidden="true"></i>
+      <i class="fa fa-step-backward" aria-hidden="true"></i>
+      <div class="playPause">
+        
+
+      <i class="fa fa-play" aria-hidden="true"></i>
+            </div>
+     <!-- <i class="fa fa-pause" aria-hidden="true"></i>-->
+     <i class="fa fa-step-forward" aria-hidden="true"></i>
+     <i class="fa-solid fa-repeat"></i>
+    </div>
+    <div class="loadbar">
+      <input type="range" id="progress" min="0" max="100" value="25">
+        
+
+    </div>
+    <div class="timer">
+      <span id="remainingTime">0:00</span>
+      <span id="remainingTime">0:00</span>
+    </div>
+  </section>
+  <section class="playlistArea">
+    <div class="songDisplay" id="sunflower">
+      <img class="playlistSongPoster" src="./assets/images/sunflower.jpg">
+        
+      </img>
+      <div class="playlistTitleAndAuthor" >
+        <h2 id="playlistTitle">Sunflower</h2>
+        <div id="playlistAuthor">
+          Post Malone And Swan Lee
+        </div>
+      </div>
+    </div>
+     <div class="songDisplay" id="sunflower">
+      <img class="playlistSongPoster" src="./assets/images/sunflower.jpg">
+        
+      </img>
+      <div class="playlistTitleAndAuthor" >
+        <h2 id="playlistTitle">Sunflower 2</h2>
+        <div id="playlistAuthor">
+          Post Malone And Swan Lee
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  
+</main>
+
+
+</body>
+
+</html>

@@ -6,19 +6,20 @@ const booksArray = [
     "genres": ["Self-help", "Personal Growth"],
     "image_url": "https://images-na.ssl-images-amazon.com/images/I/71QKQ9mwV7L.jpg"
   },
-  {
-    "title": "The Monk Who Sold His Ferrari",
-    "author": "Robin Sharma",
-    "publishing_year": 1997,
-    "genres": ["Self-help", "Motivational"],
-    "image_url": "https://images-na.ssl-images-amazon.com/images/I/71QzCPHN+pL.jpg"
-  },
+
   {
     "title": "Ikigai: The Japanese Secret to a Long and Happy Life",
     "author": "Héctor García, Francesc Miralles",
     "publishing_year": 2016,
     "genres": ["Self-help", "Philosophy"],
     "image_url": "https://images-na.ssl-images-amazon.com/images/I/81l3rZK4lnL.jpg"
+  },
+    {
+    "title": "The Monk Who Sold His Ferrari",
+    "author": "Robin Sharma",
+    "publishing_year": 1997,
+    "genres": ["Self-help", "Motivational"],
+    "image_url": "https://images-na.ssl-images-amazon.com/images/I/71QzCPHN+pL.jpg"
   },
   {
     "title": "The Courage to Be Disliked",
