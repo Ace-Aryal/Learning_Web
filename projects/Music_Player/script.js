@@ -6,14 +6,20 @@ const options = {
 		'x-rapidapi-host': 'deezerdevs-deezer.p.rapidapi.com'
 	}
 };
-
-
-
+const playPauseButton = document.querySelector (".playPause")
+playPauseIcon = document.querySelector (".playPauseIcon")
+const audio = document.querySelector ("audio")
+const playerPoster = document.querySelector ("#playerPoster")
+const titleInPlayer = document.querySelector ("#titleInPlayer")
+const artistInPlayer = document.querySelector (".artistInPlayer")
 const faChevronDown = document.querySelector (".fa-chevron-down")
 const playlistArea = document.querySelector (".playlistArea")
 const searchBar = document.querySelector ("#searchBar")
 const sliderRange = document.querySelector ("#progress")
 let result
+let isDisplayingPlaylist = false
+
+document.addEventListener("DOMContentLoaded", defaultMusic)
 faChevronDown.addEventListener("click",togglePlaylist)
 faChevronDown.addEventListener("click",fetchMusic)
 // search
@@ -31,7 +37,7 @@ searchBar.addEventListener("input",(e)=> {
   }
 })
 sliderRange.addEventListener("input",displayRange)
-
+playPauseButton.addEventListener("click",playPauseToggle)
 
 function togglePlaylist(e) {
 e.preventDefault()
@@ -65,19 +71,28 @@ function displayRange() {
 
 async function fetchMusic(e) {
   e.preventDefault()
+  if (isDisplayingPlaylist) {
+  isDisplayingPlaylist = false
+  return
+}
+  if (!isDisplayingPlaylist) {
+  isDisplayingPlaylist = true
+  
  let response = undefined
  console.log(e.target)
 try {
   if (!searchBar.value) {
     console.log("here")
-    response = await fetch(`https://allorigins.win/get?url=https://api.deezer.com/chart`)
-    console.log(response)
+    response = await fetch(`${baseURL}search?q=Charlie Puth`,options)
+  
+    
   }
 if (searchBar.value) {
   console.log("here too")
 	 response = await fetch(`${baseURL}search?q=${searchBar.value}`, options);
 	 
 }
+
 	if (!response.ok) {
 	  throw new Error(`Couldn't fetch song`)
 	}
@@ -96,6 +111,8 @@ if (searchBar.value) {
 } catch (error) {   
 	console.error(error);
 }
+}
+
 }
 
 function createMusicPage(result,song) {
@@ -135,6 +152,38 @@ function createMusicPage(result,song) {
      playlistSongAuthor.innerText = song.artist.name
    }
   
+  
+}
+
+async function defaultMusic(e) {
+  // Tab to edit
+  console.log("in defaukt music")
+  e.preventDefault()
+  try{
+const response = await fetch(`${baseURL}search?q=Charlie Puth`,options)
+if (!response.ok) {
+throw new Error('Song not found')
+return
+}
+const result = await response.json()
+console.log(result.data[0])
+
+playerPoster.src = result.data[0].album.cover_medium
+playerPoster.alt = result.data[0].title_short
+titleInPlayer.innerText = result.data[0].title_short
+artistInPlayer.innerText = result.data[0].artist.name
+audio.src = result.data[0].preview
+}
+catch (e) {
+  // Tab to 
+  console.error(e)
+}
+
+}
+
+function playPauseToggle() {
+  playPauseIcon.classList.toggle("fa-play")
+  playPauseIcon.classList.toggle("fa-pause")
   
 }
 
