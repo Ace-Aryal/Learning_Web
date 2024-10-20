@@ -22,6 +22,7 @@ color: crimson;
 div {
   margin-top: 1rem;
   width: 330px;
+  height: 100%;
   background-color: #219EBC;
   border-radius: 0.5rem;
   padding: 0.3rem 0.75rem;
