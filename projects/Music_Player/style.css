@@ -21,7 +21,7 @@ background: linear-gradient(to bottom , #2887e3 50%, #16181e 50%);
   padding: 1.5rem 1rem;
   border-radius: 0.2rem;
   width: 300px;
-  height: 540px;
+  height: auto;
 }
 
 img{
@@ -96,7 +96,7 @@ img{
   color: gray;
 }
 
-.fa-repeat:hover, .fa-random:hover{
+.loopingOrShuffling{
   margin-top: 0.18rem;
   font-size: 1.4rem;
   color: #2887e3;
@@ -115,7 +115,7 @@ img{
 }
 .loadbar{
   position: relative;
-  width: 250px ;
+  width: 100% ;
   background-color: lightgray;
   height: 4px;
   border-radius: 0.2rem;
@@ -187,6 +187,6 @@ input[type="range"] {
   border-radius: 0.15rem;
 }
 
-
-
-
+.songDisplay:focus{
+  color: #74b3ce;
+}
