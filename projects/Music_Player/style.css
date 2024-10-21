@@ -162,7 +162,7 @@ input[type="range"] {
 .playlistArea{
   display: none;
   width: 100%;
-  height: 470px;
+  height: 88%;
   background-color: #e7e7e7;
   position: absolute;
   right: 0rem;
