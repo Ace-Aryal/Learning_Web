@@ -1,0 +1,47 @@
+nav > ul{
+  
+  display: flex;
+  justify-content: space-around;
+
+}
+nav{
+  box-sizing: border-box;
+  background-color: indianred;
+  padding: 0.15rem 0.1rem;
+    z-index:1 ;
+}
+
+ul {
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+}
+
+
+nav ul  .dropdown  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+nav ul  .dropdown .dropdownContent{
+  width: 100%;
+   display: none;
+  padding: 1rem 0;
+  background-color: coral;
+  padding: 1rem;
+  
+  
+}
+
+
+nav ul  .dropdown:hover .dropdownContent{
+  display: flex;
+  flex-direction: column;
+gap: 0.2rem;
+  position: absolute;
+  top: 100%;
+}
+
