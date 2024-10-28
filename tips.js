@@ -6,6 +6,7 @@ console.log(num)
 
 // What's the output ?
 
+// free bootstrap template for tempmates eg. W3Schools or others
 
 
 // yoda notation for equal comparison
