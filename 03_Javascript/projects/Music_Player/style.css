@@ -192,6 +192,6 @@ input[type="range"] {
   border-radius: 0.15rem;
 }
 
-.songDisplay:focus{
+.currentyPlayingOnPlaylist{
   color: #74b3ce;
 }

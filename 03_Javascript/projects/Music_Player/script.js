@@ -32,7 +32,7 @@ let isPlaying = false
 let songIndex = 0
 let isOnLoop = false
 let isShuffling = false
-
+let songDisplayIndex
 // Event listener to fetch music data when the document is loaded
 document.addEventListener("DOMContentLoaded", e => {
   fetchMusic(e)
@@ -69,7 +69,7 @@ searchBar.addEventListener("input", (e) => {
   }
   if (searchBar.value) {
     displayPlaylist()
-    _.debounce(fetchMusic, 1000)
+    _.throttle(fetchMusic, 1000)
     return
   }
 })
@@ -86,6 +86,8 @@ audio.addEventListener("ended",e=> {
   setTimeout(()=> forwardBtn.click(),1000)
   
 })
+
+
 
 
 function togglePlaylist(e) {
@@ -121,16 +123,16 @@ async function fetchMusic(e) {
   isDisplayingPlaylist = true
 
   let response = undefined
-  console.log(e.target)
+  
   try {
     // Default search if search bar is empty
     if (!searchBar.value) {
-      console.log("here")
+      
       response = await fetch(`${baseURL}search?q=Charlie Puth`, options)
     }
     // Custom search if search bar has value
     if (searchBar.value) {
-      console.log("here too")
+      
       response = await fetch(`${baseURL}search?q=${searchBar.value}`, options)
     }
     // Check response and fetch data
@@ -141,8 +143,10 @@ async function fetchMusic(e) {
       playlistArea.innerHTML = ""
       result = await response.json()
       console.log(result.data)
+      
       result.data.forEach(song => {
         createMusicPage(result, song)
+
       })
     }
     // Display song card if response is okay
@@ -162,10 +166,12 @@ function createMusicPage(result, song) {
   const playlistSongTitle = document.createElement("h2")
   const playlistSongAuthor = document.createElement("div")
   
+  
   appendElements()
   addAttributes()
   addContents()
   displayOnPlayer()
+  audio.addEventListener("play",currentlyPlayingOnPlaylist)
 
   function appendElements() {
     // Append elements to DOM structure
@@ -178,6 +184,7 @@ function createMusicPage(result, song) {
   
   function addAttributes() {
     // Set attributes and classes
+    
     songDisplay.setAttribute("tabindex", "0")
     songDisplay.classList.add("songDisplay")
     playlistSongPoster.classList.add("playlistSongPoster")
@@ -187,13 +194,33 @@ function createMusicPage(result, song) {
     songDisplay.id = (`${result.data.indexOf(song)}`)
   }
   
+  
+  function currentlyPlayingOnPlaylist() {
+    
+   
+     
+    songDisplay.classList.remove("currentyPlayingOnPlaylist")
+    if (songIndex === songDisplay.id) {
+      songDisplay.classList.add("currentyPlayingOnPlaylist")
+    }
+    
+    
+   
+    
+    
+}
+  
   function addContents() {
     // Add content to elements
     playlistSongPoster.src = song.album.cover_big
     playlistSongTitle.innerText = song.title_short
     playlistSongAuthor.innerText = song.artist.name
-    console.log(result)
+    
   }
+  
+  
+  
+
   
   function displayOnPlayer() {
     // Set up click event to display song on player
@@ -225,8 +252,8 @@ function shuffle(e) {
 }
 
 async function displayMusicCard(e) {
-  console.log(result)
-  console.log("in default music")
+  
+  
   e.preventDefault()
   
   // Update player with song information
@@ -237,6 +264,8 @@ async function displayMusicCard(e) {
   audio.src = result.data[songIndex].preview
   audio.addEventListener("loadedmetadata", rangeCalculation)
   audio.addEventListener("loadedmetadata", intervalCalculation)
+  
+  
 }
 
 function playPauseToggle() {
@@ -319,5 +348,6 @@ function changeSongs(e) {
     songIndex = (result.data.length -1)
   }
   
-  console.log(songIndex)
+  
 }
+
