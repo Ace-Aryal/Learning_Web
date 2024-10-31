@@ -80,6 +80,13 @@ sliderRange.addEventListener("input", seekWithRange)
 
 // Play/Pause functionality
 playPauseButton.addEventListener("click", playPauseToggle)
+// automatically play next song after the song is ended
+audio.addEventListener("ended",e=> {
+  e.preventDefault()
+  setTimeout(()=> forwardBtn.click(),1000)
+  
+})
+
 
 function togglePlaylist(e) {
   e.preventDefault()
