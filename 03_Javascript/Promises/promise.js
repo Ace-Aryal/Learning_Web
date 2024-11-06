@@ -1,4 +1,30 @@
+//Basic promise creation and use
 
+function fetchData(){
+  return new Promise((resolve, reject) => {
+    setTimeout(()=> {
+      let sucess = true
+      if (sucess) {
+        resolve("sucessfully fetched data")
+      }
+      else {
+        reject("Couldn't fetch data")
+      }
+      
+      
+    },2000)
+  })
+}
+
+fetchData()
+.then((response)=>{
+  //const data = response.json()
+  const data = "Dipesh"
+  return data
+  console.log("converted to json")
+})
+.then((data)=>console.log("Hii"+data))
+.catch((error)=> console.log(error))
 
 
 
