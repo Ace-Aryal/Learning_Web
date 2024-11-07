@@ -2,17 +2,45 @@ window.addEventListener("load",()=>{
   const form = document.querySelector ("#newTaskForm")
   const input = document.querySelector ("#newTaskInput")
   const list_el = document.querySelector ("#tasks")
-  
-  form.addEventListener("submit",(e)=>{
+  let tasks = getTasksFromLocalStorage() || [] 
+  if (tasks!==[]) {
+    list_el.innerHTML = ""
+    tasks.forEach (taskItem => {
+      console.log("here")
+      createListItem(taskItem)
+    })
+    
+ }
+ console.log(tasks)
+  form.addEventListener("submit", e=>{ 
     e.preventDefault();
-    
-    const task = input.value ;
-    input.value = ""
-    
-   if(!task)  {
+    const task = (input.value).trim() ;
+    if(!task)  {
      alert("please input task first")
    return ;
   }
+    
+    if (task!=="") {
+      const taskObject = {
+      id: Date.now(),
+      text: task
+    }
+    tasks.push(taskObject)
+    }
+    list_el.innerHTML = ""
+    tasks.forEach(taskItem => {
+      console.log(taskItem)
+      createListItem(taskItem)
+    })
+  })
+  
+  function createListItem (taskItem){
+
+    
+    storeOnLocalStorage()
+    input.value = ""
+    
+   
   const task_el = document.createElement("div")
   task_el.classList.add("task") // outermost div for
   // tasks to create
@@ -28,7 +56,10 @@ window.addEventListener("load",()=>{
   const task_input_el = document.createElement ("input");
   task_input_el.classList.add("text")
   task_input_el.type = "text"
-  task_input_el.value = task;
+  console.log(tasks)
+  console.log(taskItem)
+  task_input_el.value = taskItem.text;
+  task_el.id= taskItem.text
   task_input_el.setAttribute("readonly","readonly")
   
   // appending input field inside content div
@@ -71,12 +102,27 @@ const task_delete_button = document.createElement ("button")
   })
   
   
-  task_delete_button.addEventListener('click',()=>{
-    
-    
+  task_delete_button.addEventListener('click',(e)=>{
+    console.log(task_el)
+    tasks = tasks.filter( task=> { 
+      return task.text!= task_el.id
+    })
     list_el.removeChild(task_el) // donot use remove use remove child
+    console.log("updated"+tasks)
+    
   })
   
-  console.log(task_edit_button)
-  })
+  }
+  
+  
+  
+  function storeOnLocalStorage() {
+    // Tab to edit
+    localStorage.setItem("tasklist",JSON.stringify(tasks))
+  }
+  
+  function getTasksFromLocalStorage() {
+    // Tab to edit
+   return JSON.parse(localStorage.getItem("tasklist"))
+  }
 })
