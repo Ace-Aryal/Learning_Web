@@ -11,7 +11,7 @@ window.addEventListener("load",()=>{
     })
     
  }
- console.log(tasks)
+ 
   form.addEventListener("submit", e=>{ 
     e.preventDefault();
     const task = (input.value).trim() ;
@@ -29,7 +29,7 @@ window.addEventListener("load",()=>{
     }
     list_el.innerHTML = ""
     tasks.forEach(taskItem => {
-      console.log(taskItem)
+      
       createListItem(taskItem)
     })
   })
@@ -56,10 +56,10 @@ window.addEventListener("load",()=>{
   const task_input_el = document.createElement ("input");
   task_input_el.classList.add("text")
   task_input_el.type = "text"
-  console.log(tasks)
-  console.log(taskItem)
+ 
+
   task_input_el.value = taskItem.text;
-  task_el.id= taskItem.text
+  task_el.id= taskItem.id
   task_input_el.setAttribute("readonly","readonly")
   
   // appending input field inside content div
@@ -104,11 +104,13 @@ const task_delete_button = document.createElement ("button")
   
   task_delete_button.addEventListener('click',(e)=>{
     console.log(task_el)
-    tasks = tasks.filter( task=> { 
-      return task.text!= task_el.id
+    tasks = tasks.filter( task=>  {
+      return task.id != task_el.id;
+    
     })
+    console.log(tasks)
     list_el.removeChild(task_el) // donot use remove use remove child
-    console.log("updated"+tasks)
+    storeOnLocalStorage()
     
   })
   
