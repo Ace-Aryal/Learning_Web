@@ -5,97 +5,148 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shopping Cart</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer>script.js</script>
-       <script src="https://kit.fontawesome.com/f06ee4b06e.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer>script.js</script>
+  <script src="https://kit.fontawesome.com/f06ee4b06e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
- <main class="container lg:max-w-sm mx-auto  sm:max-w-2xl p-4" id="main-container">
-   <section class="flex justify-between ">
-     <h1>Ace Book Shop</h1>
-     <div class="cartButton">
-   <i class="fa-solid fa-cart-shopping"></i><sup></sup>
-        </div>
-   </section>
-   <section class="cards-container  grid grid-cols-2  sm:grid-cols-4 mx-auto gap-4 gap-x-4 place-items-center content-between">
-     <div class="card flex flex-col w-[150px] h-[]">
-       <img src="assets/monk.png" alt="">
-       <h2 class="" class="title">The Monk Who Sold His Ferrari
-       </h2>
-       <p class="rating ">⭐️⭐️⭐️⭐️</p>
-       <h3 class="price"> $ 7.99</h3>
-       <button type="submit">Add To Cart</button>
+  <main class="container lg:max-w-sm mx-auto sm:max-w-2xl p-4 relative" id="main-container">
+    <section id="landingPage">
+      
+
+    <section class="flex justify-between mb-6">
+      <h1 class="text-2xl font-bold">Ace Book Shop</h1>
+      <div class="cartButton text-2xl">
+        <i class="fa-solid fa-cart-shopping"></i><sup class="bg-red-600 rounded  text-white"></sup>
+      </div>
+    </section>
+
+    <section class="cards-container grid grid-cols-2 sm:grid-cols-4 mx-auto gap-4 gap-x-4 place-items-stretch">
+      <!-- Card 1 -->
+      <div class="card flex flex-col w-[150px] h-[] text-center">
+        <img src="assets/monk.png" alt="">
+        <h2 class="title font-bold">The Monk Who Sold His Ferrari</h2>
+        <p class="rating">⭐️⭐️⭐️⭐️</p>
+        <h3 class="price text-gray-600" id="7.99">$ 7.99</h3>
+        <button type="submit" class="text-white bg-[#26282a] p-1 font-bold rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card flex flex-col w-[150px] h-[] text-center">
+        <img src="assets/courage.jpeg" alt="">
+        <h2 class="title font-bold">The Courage To be Disliked</h2>
+        <p class="rating">⭐️⭐️⭐️⭐️</p>
+        <h3 class="price text-gray-600" id="9.99">$ 9.99</h3>
+        <button type="submit" class="text-white bg-[#26282a] p-1 font-bold rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card flex flex-col w-[150px] h-[] text-center">
+        <img src="assets/ah.jpeg" alt="">
+        <h2 class="title font-bold">Atomic Habits</h2>
+        <p class="rating">⭐️⭐️⭐️⭐️</p>
+        <h3 class="price text-gray-600" id="3.99"><del>$7.99</del> $ 3.99</h3>
+        <button type="submit" class="text-white bg-[#26282a] p-1 font-bold rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card flex flex-col w-[150px] h-[] text-center">
+        <img src="assets/fuck.jpg" alt="">
+        <h2 class="title font-bold">The Subtle Art Of Not Giving A Fuck</h2>
+        <p class="rating">⭐️⭐️⭐️⭐️</p>
+        <h3 class="price text-gray-600" id="5.99">$ 5.99</h3>
+        <button type="submit" class="text-white bg-[#26282a] p-1 font-bold rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card flex flex-col w-[150px] h-[] text-center">
+        <img src="assets/iki.jpeg" alt="">
+        <h2 class="title font-bold">Ikigai</h2>
+        <p class="rating">⭐️⭐️⭐️⭐️</p>
+        <h3 class="price text-gray-600" id="4.99">$ 4.99</h3>
+        <button type="submit" class="text-white bg-[#26282a] p-1 font-bold rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card flex flex-col w-[150px] h-[] text-center">
+        <img src="assets/talk.jpeg" alt="">
+        <h2 class="title font-bold">How To Talk To Anyone</h2>
+        <p class="rating">⭐️⭐️⭐️⭐️</p>
+        <h3 class="price text-gray-600" id="7.99">$ 7.99</h3>
+        <button type="submit" class="text-white bg-[#26282a] p-1 font-bold rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="card flex flex-col w-[150px] h-[] text-center">
+        <img src="assets/friends_.jpg" alt="">
+        <h2 class="title font-bold">How To Win Friends And Influence People</h2>
+        <p class="rating">⭐️⭐️⭐️⭐️</p>
+        <h3 class="price text-gray-600" id="1.99">$ 1.99</h3>
+        <button type="submit" class="text-white bg-[#26282a] p-1 font-bold rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="card flex flex-col w-[150px] h-[] text-center">
+        <img src="assets/ul.jpg" alt="">
+        <h2 class="title font-bold">Ugly Love</h2>
+        <p class="rating">⭐️⭐️⭐️⭐️</p>
+        <h3 class="price text-gray-600" id="12.99">$ 12.99</h3>
+        <button type="submit" class="text-white bg-[#26282a] p-1 font-bold rounded-lg"><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button>
+      </div>
+    </section>
+  </section>
+    <aside class="checkoutSection bg-gray-900 pt-5 absolute flex flex-col top-0 left-0 inset-0 h-[100vh] hidden">
+     <h2 class="text-center text-white">Your Cart</h2>
+     <div class="itemsArea py-4 h-[80%] overflow-y-scroll">
+     <!--  <div class="item text-white flex justify-around items-center py-2">
+         <img src="assets/friends_.jpg" alt="" class="h-12 w-12">
+         <div class="w-[40%]">
+         <span class="">The Subtle Art of Not Giving A fuck</span>
+          </div>
+          <div class="priceCart">
+           $ 1000
+          </div>
+          <div class="quantitiy">
+            <button type="submit" class="bg-white rounded-[50%] text-black w-4 h-4">—</button>
+            <input type="number" class="w-8 bg-transparent text-center" value="0" name="" id="">
+            <button type="submit" class="bg-white rounded-[50%] text-black w-4 h-4">+</button>
+            
+          </div>
+       </div>
+         <div class="item text-white flex justify-around items-center">
+         <img src="assets/friends_.jpg" alt="" class="h-12 w-12">
+         <div class="w-[40%]">
+         <span class="">The Subtle Art of Not Giving A fuck</span>
+          </div>
+          <div class="priceCart">
+           $ 1000
+          </div>
+          <div class="quantitiy">
+            <button type="submit" class="bg-white rounded-[50%] text-black w-4 h-4">—</button>
+            <input type="number" class="w-8 bg-transparent text-center" value="0" name="" id="">
+            <button type="submit" class="bg-white rounded-[50%] text-black w-4 h-4">+</button>
+            
+          </div>
+       </div>-->
+     </div>
+     <div class="checkoutArea grid grid-cols-2 mt-auto">
+       <div class="subtotalDisplay text-center bg-white py-4">
+         Subtotal(2 items) $ 0.00
+       </div>
+       <div class="close text-center text-white bg-black py-4">
+         Close
+       </div>
+       <div  class="checkoutBtn col-span-2 text-center text-white bg-cyan-500 py-4">
+         Checkout
+       </div>
        
      </div>
-     <div class="card flex flex-col w-[150px] h-[]">
-  <img src="assets/courage.jpeg" alt="">
-  <h2 class="" class="title"> The Courage To be Disliked
-  </h2>
-  <p class="rating ">⭐️⭐️⭐️⭐️</p>
-  <h3 class="price"> $ 9.99</h3>
-  <button type="submit">Add To Cart</button>
-
-</div>
-<div class="card flex flex-col w-[150px] h-[px]">
-  <img src="assets/ah.jpeg" alt="">
-  <h2 class="" class="title"> Atomic Habits
-  </h2>
-  <p class="rating ">⭐️⭐️⭐️⭐️</p>
-  <h3 class="price"> <del>$7.99</del> $ 3.99</h3>
-  <button type="submit">Add To Cart</button>
-
-</div>
-<div class="card flex flex-col w-[150px] h-[]">
-  <img src="assets/fuck.jpg" c alt="">
-  <h2 class="" class="title"> The Subtle Art Of Not Giving A Fuck
-  </h2>
-  <p class="rating ">⭐️⭐️⭐️⭐️</p>
-  <h3 class="price"> $ 5.99</h3>
-  <button type="submit">Add To Cart</button>
-
-</div>
-<div class="card flex flex-col w-[150px] h-[]">
-  <img src="assets/iki.jpeg" alt="">
-  <h2 class="" class="title"> Ikigai
-  </h2>
-  <p class="rating ">⭐️⭐️⭐️⭐️</p>
-  <h3 class="price"> $ 4.99</h3>
-  <button type="submit">Add To Cart</button>
-
-</div>
-<div class="card flex flex-col w-[150px] h-[]">
-  <img src="assets/talk.jpeg" alt="">
-  <h2 class="" class="title"> How To talk To Anyone
-  </h2>
-  <p class="rating ">⭐️⭐️⭐️⭐️</p>
-  <h3 class="price"> $ 7.99</h3>
-  <button type="submit">Add To Cart</button>
-
-</div>
-<div class="card flex flex-col w-[150px] h-[]">
-  <img src="assets/friends_.jpg" alt="">
-  <h2 class="" class="title"> How To Win Friends And Influence People
-  </h2>
-  <p class="rating ">⭐️⭐️⭐️⭐️</p>
-  <h3 class="price"> $ 1.99</h3>
-  <button type="submit">Add To Cart</button>
-
-</div>
-<div class="card flex flex-col w-[150px] h-[]">
-  <img src="assets/ul.jpg" alt="">
-  <h2 class="" class="title">Ugly Love
-  </h2>
-  <p class="rating ">⭐️⭐️⭐️⭐️</p>
-  <h3 class="price"> $ 12.99</h3>
-  <button type="submit">Add To Cart</button>
-
-</div>
-
-   </section>
- </main>
- 
+     
+   </aside>
+  </main>
+   
 </body>
 
 </html>
