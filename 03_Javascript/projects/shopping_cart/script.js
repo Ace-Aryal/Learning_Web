@@ -14,6 +14,7 @@ const checkoutButton = document.querySelector(".checkoutBtn"); // Button to init
 let numberOfCartItems = 0;
 let price = 0;
 let cartCollection = []; // Array to hold items added to the cart
+let isUpdatjngCartItemByUser = false
 
 // Initial setup: update the cart display when DOM content is loaded
 document.addEventListener("DOMContentLoaded", e => {
@@ -70,9 +71,10 @@ function addItemToCart(e) {
   updateNoOfCartItemsAndPrice();
 
   // Checking if the item already exists in the cart
-  const exists = cartCollection.some(item => JSON.stringify(item) === JSON.stringify(cartCollectionItem));
+  const exists = cartCollection.some(item => JSON.stringify(item.title) === JSON.stringify(cartCollectionItem.title));
 
   if (exists) {
+    updateItemQuantity(cartCollectionItem,e)
     return; // If item exists, do not add again
   }
 
@@ -93,7 +95,7 @@ function addItemToCart(e) {
   appendElements();
   addAttributesAndClasslists();
   addContents();
-
+  incrementAndDecrementCartItem()
   // Function to append all elements in the correct order to the DOM
   function appendElements() {
     itemsArea.appendChild(itemEl);
@@ -111,6 +113,7 @@ function addItemToCart(e) {
   function addAttributesAndClasslists() {
     itemEl.classList.add("item", "text-white", "flex", "justify-between", "items-center", "py-2", "px-2");
     itemEl.id = `${cartCollectionItem.title}cart`;
+    
 
     imageEl.classList.add("h-12", "w-12");
     titleContainerEl.classList.add("w-40%");
@@ -121,6 +124,11 @@ function addItemToCart(e) {
     plusItemEl.classList.add("bg-white", "rounded-[50%]", "text-black", "w-4", "h-4");
     quantityInputEl.classList.add("w-8", "bg-transparent", "text-center");
     quantityInputEl.type = "number";
+    quantityInputEl.id = "quantityDisplay"
+    quantityInputEl.value = 1
+    minusItemEl.id ="minus"
+    plusItemEl.id="plus"
+    
   }
 
   // Function to set the content for each of the cart item elements
@@ -134,6 +142,19 @@ function addItemToCart(e) {
       quantityInputEl.value = cart.quantity;
     });
   }
+  function incrementAndDecrementCartItem() {
+    // Tab to edit
+    plusItemEl.addEventListener("click",e=>{
+      updateItemQuantity(cartCollectionItem,e)
+    })
+    minusItemEl.addEventListener("blur",e=>{
+      updateItemQuantity(cartCollectionItem,e)
+      
+    })
+ //  quantityInputEl.addEventListener//("change",e=> {
+ //    updateItemQuantity(cartCollection,e)
+ //  })
+  }
 }
 
 // Handles checkout actions, resets the cart and updates display
@@ -144,4 +165,35 @@ function checkout() {
   itemsArea.innerHTML=""
   cartCollection = []
   updateNoOfCartItemsAndPrice();
+}
+
+function updateItemQuantity(cartCollectionItem,e) {
+  // Tab to edit
+  
+  
+  
+  const itemEl = document.getElementById(`${cartCollectionItem.title}cart`)
+    const repeatingItem = cartCollection.find(item=> JSON.stringify(item.title) === JSON.stringify(cartCollectionItem.title))
+    console.log(repeatingItem)
+    if (e.target.id ==="minus" && repeatingItem.quantity<=1) {
+      repeatingItem.quantity=0
+      itemsArea.remove(itemEl)
+      return
+    }
+    
+    if (e.target.id === "minus") {
+    repeatingItem.quantity--
+    itemEl.querySelector("input").value = repeatingItem.quantity
+    
+    return
+  }
+//  if (e.target.id ==="quantityDisplay") {
+  //  repeatingItem
+//  }
+  
+
+
+    repeatingItem.quantity++
+    itemEl.querySelector("input").value = repeatingItem.quantity
+    
 }
