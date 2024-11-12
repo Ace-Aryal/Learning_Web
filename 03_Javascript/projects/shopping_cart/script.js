@@ -21,6 +21,8 @@ let cartCollection = []; // Array to hold items added to the cart
 document.addEventListener("DOMContentLoaded", e => {
   getDataFromLocalStorage()
   updateNoOfCartItemsAndPrice();
+  if (cartCollection!==[]) {
+    
   cartCollection.forEach(cartCollectionItem=> {
   
   if (cartCollection.length) {
@@ -101,6 +103,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
   }
 })
+}
 });
 
 // Event listeners for showing/hiding the cart section
@@ -118,6 +121,7 @@ addToCartButtonsCollection.forEach(button => {
     e.preventDefault(); // Prevent default form behavior if within a form
     addItemToCart(e); // Add item to the cart
   });
+
 });
 
 // Event listener for the checkout button
@@ -318,7 +322,7 @@ function storeInLocalStorage(param) {
 
 function getDataFromLocalStorage() {
   // Tab to edit
-  cartCollection = JSON.parse(localStorage.getItem("cartData"))
+  cartCollection = JSON.parse(localStorage.getItem("cartData")) || []
   price = Number(localStorage.getItem("price"))
   numberOfCartItems = Number(localStorage.getItem("numberOfCartItems"))
 }
