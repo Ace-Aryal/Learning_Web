@@ -12,10 +12,10 @@ function App() {
     setContact((prevValue) => {
       //prevValue (1st arguement of the 
       //callback inside the setStateItems ) 
-      // holds tye most recent state of variable (contact in this case)
+      // holds the most recent state of variable (contact in this case)
       return {
         ...prevValue,
-        [name]:value
+        [name]:value 
       }
     });
   }
