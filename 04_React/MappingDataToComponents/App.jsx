@@ -7,7 +7,7 @@ function createCard(contact) {
     <Card
     id = {contact.id} //also we cant use key as a props.key as "key" is used for another purpose
       key={contact.id} // we need a unique id or identifier for a component called as "key" if
-      // it is being reused via loop 
+      // it is being reused via map
       name={contact.name}
       img={contact.imgURL}
       tel={contact.phone}
