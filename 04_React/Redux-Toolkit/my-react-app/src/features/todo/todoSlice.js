@@ -11,7 +11,7 @@ export const todoSlice = createSlice({ // like create context in context api
         addTodo : (state , action) => {
              const todo = {
                 id : nanoid(),
-                text : action.payload
+                text : action.payload // eqvt : text : action.payload.text
              }
 
              state.todos.push(todo)
@@ -23,10 +23,10 @@ export const todoSlice = createSlice({ // like create context in context api
         },
 
         updateTodo : (state , action) => {
-            state.todos = state.todos.map(todo => todo.id === action.payload ? {
+            state.todos = state.todos.map(todo => todo.id === action.payload.id ? {
                 id : todo.id,
-                text : action.payload
-            } : todo )
+                text : action.payload  
+            } : todo ) // eqvt action.payload.text
         }
 
     }
