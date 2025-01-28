@@ -6,7 +6,13 @@
 2.create store configureStore()
 2. createReducer() // create slices ans export the slice and reducers and 
   define it in store using configurestore
-3.
+3. useDispath : it uses reducers to change store values
+4.useSelector : this to select slice state
+t.provider with store
+
+tip: use redux dev tols for debugging
+
+
 */
 
 import {configureStore} from "@reduxjs/toolkit"

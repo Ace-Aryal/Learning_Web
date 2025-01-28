@@ -25,9 +25,16 @@ export const todoSlice = createSlice({ // like create context in context api
         updateTodo : (state , action) => {
             state.todos = state.todos.map(todo => todo.id === action.payload.id ? {
                 id : todo.id,
+<<<<<<< HEAD
                 text : action.payload  
             } : todo ) // eqvt action.payload.text
         }
+=======
+                text : action.payload.text
+            } : todo )
+        } 
+            
+>>>>>>> 8043991 ( update remaining)
 
     }
 })

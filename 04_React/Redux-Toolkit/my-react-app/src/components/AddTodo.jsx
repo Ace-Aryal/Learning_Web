@@ -1,6 +1,19 @@
 import React , {useState} from 'react'
+import {useDispatch} from "react-redux"
+import { addTodo } from '../features/todo/todoSlice'
+
 
 export default function AddTodo() {
+
+  const  [input , setInput] = useState('')
+  const dispatch = useDispatch()
+
+  const addTodoHandler = e => {
+    e.preventDefault()
+    dispatch(addTodo(input)) // dispatch->reducers->change values in slice // passing action.payload
+    setInput("") //take input , got it? now clean the text box
+
+  }
   return (
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
       <input
