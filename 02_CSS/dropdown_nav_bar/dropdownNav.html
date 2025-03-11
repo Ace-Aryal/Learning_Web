@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <nav class="flex justify-between mx-auto h-[20px]">
+        <div class="logo">Logo</div>
+        <div id="nav-links">
+            <ul class="flex justify-between space-x-2">
+             <li class="group relative ">Services 
+               <ul class="absolute top-full invisible group-hover:visible  opacity-0 scale-95 transition-all duration-500 ease-in-out  group-hover:opacity-100 group-hover:scale-100    ">
+                <li>Web Design</li>
+                <li>Web Development</li>
+                <li>Mobile Development</li>
+               </ul>
+            </li>
+             <li>About</li>
+             <li>Products</li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>
