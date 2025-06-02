@@ -20,7 +20,9 @@ function App() {
   return (
     <div>
       <h1 className="heading">My Contacts</h1>
-      {contacts.map(createCard)}
+      {contacts.map(contact => {
+        createCard(contact )
+      })}
 
       {/* <Card
         name={contacts[0].name}
