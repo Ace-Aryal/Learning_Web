@@ -1,3 +1,3 @@
 export default function Home() {
-    return <div>HEllo World!</div>
+    return <div className="bg-gray-600 text-white">HEllo World!</div>
 }
