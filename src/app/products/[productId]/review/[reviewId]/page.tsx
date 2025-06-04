@@ -1,5 +1,5 @@
 
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 type Props = {
   params: Promise<{ productId: string, reviewId: string }>,
 };

@@ -10,30 +10,36 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-    // children,
+    children,
     notifications,
     revenue,
-    users
+    users,
+    login
 }: Readonly<{
     children: React.ReactNode;
     notifications: React.ReactNode;
     revenue: React.ReactNode;
     users: React.ReactNode;
+    login: React.ReactNode;
 }>) {
+    const isLoggedin = true
     // parallel routes :
     //Note : these slots have their own route and state in a single layout so re-rendering is not ana issue for them , however their
     // routes are still "dashboard and dont have their own"
     // layout still runs without page in the directory as a route
-    return (
-        <>
-            <Header />
-            {/* {children} */}
-            {notifications}
-            {revenue}
-            {users}
-            <Footer />/
-        </>
 
 
-    );
+    return isLoggedin ? (<>
+
+        <Header />
+        {children}
+        {notifications}
+        {revenue}
+        {users}
+        <Footer />/
+    </>)
+        : (
+            login
+        )
+
 }
