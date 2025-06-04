@@ -24,3 +24,4 @@ export default function ErrorBoundary({ error, reset }: { error: Error, reset: (
         </div>
     );
 }
+// this error.tsx doesnt catch error in layout > suspense tree then how ? error.tsx in the parent route however cathes it

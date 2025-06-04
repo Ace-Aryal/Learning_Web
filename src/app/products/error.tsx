@@ -17,10 +17,11 @@ export default function ErrorBoundary({ error, reset }: { error: Error, reset: (
     return (
         <div className="min-h-screen flex items-center justify-center bg-red-100 text-red-800">
             <div className="text-center space-y-4">
-                <h1 className="text-3xl font-bold">Error In review Id</h1>
+                <h1 className="text-3xl font-bold">Error In Layout</h1>
                 <p className="text-lg">{error.message}</p>
                 <button onClick={reload}>Click me to reset</button>
             </div>
         </div>
     );
 }
+// this also cathes child layouts and tempaltes
