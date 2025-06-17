@@ -19,3 +19,16 @@
 - add them in pages , yes it is duplication but it is worth it , dont want that ?
 - then use middle ware , this also prevents accidental dynamic rendering of the pages from reading cookies
 - do not handle sign up , login , logout directly in the header, refactor them to their own components to prevent dynamic rendering
+
+## Data Acess Layer ( DAL )
+
+- React components are meant for reuasblility so do not use direct db methods , they may be used in the page that is public for displaying data. there instead use the layer like you meade during the appwrite and run auth check there if the user has auth or not , this way you prevent your db ( auth exactly at the mouth)
+- make a file and make functions or methods an abstract layer
+- not protecting the page but protectig the db methods which is what we want to protect
+- do this and you can use the roles in pages too for Ui feedback
+- with dal you dont have to add auth check on server actions and components
+- But be sure that these fns make your app dynamic so if you want it staically rendered you still have the middleware
+- if a component is going through a lot of auth checks and is not that much of a high risk you can wrap the fn with cache method from next js
+- also a good thing to make a utility fn / DAl fn that checks the auth and returns user id and auth = true for simplw auth where you dont need access control
+
+## sepetate server utils (server only package) and client utils (client only package) and hybdrid utils they can also be lablled Server-utils-DAL if it is DAL
