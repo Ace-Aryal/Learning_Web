@@ -6,18 +6,22 @@ async function BlogForm({
   id,
 }: {
   action: "create" | "update";
-  id: string;
+  id?: string;
 }) {
   console.log(action);
+  const date = new Date().toDateString().slice(0, 10);
   return (
     <form
       action={
         action === "create"
           ? async (formData: FormData) => {
+              "use server";
               const title = formData.get("title") as string;
               const description = formData.get("description") as string;
               const content = formData.get("content") as string;
+
               const submitData = {
+                date,
                 title,
                 description,
                 content,
@@ -26,10 +30,12 @@ async function BlogForm({
               console.log(res);
             }
           : async (formData: FormData) => {
+              "use server";
               const title = formData.get("title") as string;
               const description = formData.get("description") as string;
               const content = formData.get("content") as string;
               const submitData = {
+                date,
                 id,
                 title,
                 description,
@@ -76,7 +82,7 @@ async function BlogForm({
         type="submit"
         className="px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition"
       >
-        Publish Blog
+        {action === "create" ? "Publish Blog" : "Update Blog"}
       </button>
     </form>
   );

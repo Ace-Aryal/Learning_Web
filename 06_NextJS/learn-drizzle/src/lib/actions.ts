@@ -1,11 +1,12 @@
 import { blogSchema, Blog } from "./schema";
 export const createPost = async (formData: Blog) => {
-  const { title, description, content } = formData;
+  const { title, description, content, date } = formData;
 
   const validation = blogSchema.safeParse({
     title,
     description,
     content,
+    date,
   });
   if (validation.error) {
     return {
@@ -14,7 +15,7 @@ export const createPost = async (formData: Blog) => {
   }
 
   try {
-    console.log(formData);
+    console.log(formData, "creating");
     return {
       success: "Blog created sucesfully",
     };
@@ -30,10 +31,11 @@ export const createPost = async (formData: Blog) => {
     };
   }
 };
-export const getPots = async () => {
+export const getPosts = async (id: string) => {
   try {
     // get logic
     console.log("");
+    console.log("id", id);
   } catch (error) {
     if (error && error instanceof Error) {
       return {
@@ -47,7 +49,7 @@ export const getPots = async () => {
 };
 
 export const updatePost = async (formData: Blog) => {
-  const { id, title, description, content } = formData;
+  const { id, title, description, content, date } = formData;
   if (!id) {
     return {
       error: "Id is required",
@@ -57,6 +59,7 @@ export const updatePost = async (formData: Blog) => {
     title,
     description,
     content,
+    date,
   });
   if (validation.error) {
     return {
@@ -65,7 +68,7 @@ export const updatePost = async (formData: Blog) => {
   }
 
   try {
-    console.log(formData);
+    console.log(formData, "updating");
     return {
       success: "Blog updated sucesfully",
     };
