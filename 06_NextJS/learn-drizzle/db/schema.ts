@@ -1,7 +1,5 @@
 import {
-  integer,
   pgTable,
-  varchar,
   timestamp,
   serial,
   text,

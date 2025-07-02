@@ -1,34 +1,11 @@
-import { deletePost } from "@/lib/actions";
+import { deletePost, getPosts } from "@/lib/actions";
 import Link from "next/link";
-const dummyArray = [
-  {
-    id: 1,
-    title: "Blog 1",
-    date: "2025-1-1",
-    description: "An introductory post about web development basics.",
-    content:
-      "This article covers HTML, CSS, and JavaScript fundamentals to help you get started building websites.",
-  },
-  {
-    id: 2,
-    title: "Blog 2",
-    date: "2025-1-1",
 
-    description: "Understanding React state management.",
-    content:
-      "We dive into useState, useReducer, and when you might reach for Redux or Zustand in larger applications.",
-  },
-  {
-    id: 3,
-    title: "Blog 3",
-    date: "2025-1-1",
-    description: "Deploying a Next.js app with Vercel.",
-    content:
-      "A step-by-step guide on how to deploy your Next.js project to Vercel, including environment variables and previews.",
-  },
-];
-
-export default function HomePage() {
+export default async function HomePage() {
+  const allPosts = await getPosts();
+  if ("error" in allPosts) {
+    return <p>Error fetching data</p>;
+  }
   return (
     <main className="min-h-screen bg-gray-50 p-8 flex flex-col">
       <div className="flex items-center justify-between mb-6">
@@ -42,10 +19,12 @@ export default function HomePage() {
       </div>
 
       <div className="flex-1 overflow-y-auto space-y-4">
-        {dummyArray.map((blog) => (
+        {allPosts.map((blog) => (
           <div key={blog.id} className="p-6 rounded-xl shadow bg-white">
             <h2 className="text-2xl font-semibold">{blog.title}</h2>
-            <p className="text-xs mb-4 text-gray-500">{blog.date}</p>
+            <p className="text-xs mb-4 text-gray-500">
+              {blog.createdAt.toDateString()}
+            </p>
 
             <p className="text-gray-600 mt-2 mb-4">{blog.description}</p>
             <div className="flex space-x-4">
@@ -65,7 +44,7 @@ export default function HomePage() {
                 action={async () => {
                   "use server";
                   console.log("this works");
-                  await deletePost(String(blog.id));
+                  await deletePost(blog.id);
                 }}
               >
                 <button

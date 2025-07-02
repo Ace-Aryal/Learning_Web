@@ -1,4 +1,4 @@
-import { createPost, updatePost } from "@/lib/actions";
+import { createPost, getPost, updatePost } from "@/lib/actions";
 import React from "react";
 
 async function BlogForm({
@@ -10,6 +10,22 @@ async function BlogForm({
 }) {
   console.log(action);
   const date = new Date().toDateString().slice(0, 10);
+  const defaultValues = {
+    title: "",
+    description: "",
+    content: "",
+  };
+  if (action === "update") {
+    const blogId = Number(id);
+    const blog = await getPost(blogId);
+    if ("error" in blog) {
+      return <p>Error fetching data</p>;
+    }
+    defaultValues.title = blog.title;
+    defaultValues.description = blog.description;
+    defaultValues.content = blog.content;
+  }
+  const { title, description, content } = defaultValues;
   return (
     <form
       action={
@@ -51,6 +67,7 @@ async function BlogForm({
         <label className="block text-gray-700 mb-2">Title</label>
 
         <input
+          defaultValue={title}
           type="text"
           name="title"
           className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -61,6 +78,7 @@ async function BlogForm({
       <div>
         <label className="block text-gray-700 mb-2">Description</label>
         <input
+          defaultValue={description}
           name="description"
           type="text"
           className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -71,6 +89,7 @@ async function BlogForm({
       <div>
         <label className="block text-gray-700 mb-2">Content</label>
         <textarea
+          defaultValue={content}
           name="content"
           rows={6}
           className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
