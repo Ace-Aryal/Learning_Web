@@ -1,60 +1,103 @@
-"use server";
-import { z } from "zod";
-export const blogSchema = z.object({
-  title: z.string().min(1, "Title is required"),
-  description: z.string().min(1, "Title is required"),
-  content: z.string().min(1, "Title is required"),
-});
-export type Blog = z.infer<typeof blogSchema>;
-export const createPost = async (formData: FormData) => {
-  const title = formData.get("title") as string;
-  const description = formData.get("description") as string;
-  const content = formData.get("content") as string;
+import { blogSchema, Blog } from "./schema";
+export const createPost = async (formData: Blog) => {
+  const { title, description, content } = formData;
+
   const validation = blogSchema.safeParse({
     title,
     description,
     content,
   });
   if (validation.error) {
-    throw new Error("Invalid blog format");
-  }
-
-  try {
-    console.log(formData);
-  } catch (error: unknown) {
-    console.error(error);
-  }
-};
-
-export const updatePost = async (formData: FormData) => {
-  const title = formData.get("title") as string;
-  const description = formData.get("description") as string;
-  const content = formData.get("content") as string;
-  const validation = blogSchema.safeParse({
-    title,
-    description,
-    content,
-  });
-  if (validation.error) {
-    throw new Error("Invalid blog format");
-  }
-  try {
-    console.log(formData);
-    return;
-  } catch (error) {
-    console.error(error);
-  }
-};
-export const deletePost = async (formData: FormData) => {
-  const id = formData.get("id");
-  if (!id) {
     return {
-      error: "Could't get blog id",
+      error: "Please provide valid inputs",
     };
   }
+
   try {
-    console.log({ id });
-  } catch (error) {
+    console.log(formData);
+    return {
+      success: "Blog created sucesfully",
+    };
+  } catch (error: unknown) {
     console.error(error);
+    if (error && error instanceof Error) {
+      return {
+        error: error.message,
+      };
+    }
+    return {
+      error: "Something went wrong",
+    };
+  }
+};
+export const getPots = async () => {
+  try {
+    // get logic
+    console.log("");
+  } catch (error) {
+    if (error && error instanceof Error) {
+      return {
+        error: error.message,
+      };
+    }
+    return {
+      error: "Something went wrong",
+    };
+  }
+};
+
+export const updatePost = async (formData: Blog) => {
+  const { id, title, description, content } = formData;
+  if (!id) {
+    return {
+      error: "Id is required",
+    };
+  }
+  const validation = blogSchema.safeParse({
+    title,
+    description,
+    content,
+  });
+  if (validation.error) {
+    return {
+      error: "Please provide valid inputs",
+    };
+  }
+
+  try {
+    console.log(formData);
+    return {
+      success: "Blog updated sucesfully",
+    };
+  } catch (error: unknown) {
+    if (error && error instanceof Error) {
+      return {
+        error: error.message,
+      };
+    }
+    return {
+      error: "Something went wrong",
+    };
+  }
+};
+export const deletePost = async (blogId: string) => {
+  if (!blogId) {
+    throw new Error("Couldn't delete blog");
+  }
+  try {
+    console.log({ blogId });
+    return {
+      success: "Blog deleted sucesfully",
+    };
+  } catch (error: unknown) {
+    console.error(error);
+    if (error && error instanceof Error) {
+      return {
+        error: error.message,
+      };
+    }
+    return {
+      error: "Something went wrong",
+    };
   }
 };

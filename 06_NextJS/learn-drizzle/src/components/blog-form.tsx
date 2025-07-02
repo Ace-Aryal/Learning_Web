@@ -1,18 +1,49 @@
 import { createPost, updatePost } from "@/lib/actions";
 import React from "react";
 
-function BlogForm({ action }: { action: "create" | "update" }) {
+async function BlogForm({
+  action,
+  id,
+}: {
+  action: "create" | "update";
+  id: string;
+}) {
   console.log(action);
   return (
     <form
-      action={action === "create" ? createPost : updatePost}
+      action={
+        action === "create"
+          ? async (formData: FormData) => {
+              const title = formData.get("title") as string;
+              const description = formData.get("description") as string;
+              const content = formData.get("content") as string;
+              const submitData = {
+                title,
+                description,
+                content,
+              };
+              const res = await createPost(submitData);
+              console.log(res);
+            }
+          : async (formData: FormData) => {
+              const title = formData.get("title") as string;
+              const description = formData.get("description") as string;
+              const content = formData.get("content") as string;
+              const submitData = {
+                id,
+                title,
+                description,
+                content,
+              };
+              const res = await updatePost(submitData);
+              console.log(res);
+            }
+      }
       className="w-full max-w-2xl space-y-6"
     >
       <div>
         <label className="block text-gray-700 mb-2">Title</label>
-        {action === "create" && (
-          <input type="text" className="hidden" name="id" />
-        )}
+
         <input
           type="text"
           name="title"
