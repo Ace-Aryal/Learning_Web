@@ -15,3 +15,36 @@ Error thrown by browser is caught by Error Boundary.
 -Fetch errors: 
  usually our fetch error is handled by React Query but if we want async erros also to be thrwon to error boundary use the `react-error-boundary` 
 package
+
+``` tsx
+// components/ErrorBoundary.tsx
+'use client'
+
+import { Component, ReactNode } from 'react'
+import { ErrorCard } from './ErrorCard'
+
+interface Props {
+  children: ReactNode
+}
+
+interface State {
+  hasError: boolean
+}
+
+export class ErrorBoundary extends Component<Props, State> {
+  state = { hasError: false }
+
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <ErrorCard message="Something went wrong on the client." />
+    }
+
+    return this.props.children
+  }
+}
+
+```
